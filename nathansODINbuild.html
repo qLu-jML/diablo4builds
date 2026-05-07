@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ODIN'S RAVENSTORM v11 – Paragon Bonus Edition (21 pts @15)</title>
+  <title>ODIN’S PULVERIZE BEAR v15 – Paragon Bonus Edition (21 pts @15)</title>
   <style>
     @page { size: Letter; margin: 0.45in; }
     :root{
-      --bg:#07101f;
-      --panel:#102442;
-      --panel2:#183765;
-      --ink:#dbe9ff;
-      --dim:#a0bce6;
-      --blue:#58abff;
-      --blue2:#81c9ff;
-      --rule:#3a6cac;
+      --bg:#0f1a12;
+      --panel:#1e2f22;
+      --panel2:#2a3f2f;
+      --ink:#e8f0e0;
+      --dim:#b8d0a8;
+      --earth:#9cbf6b;
+      --earth2:#c4e07f;
+      --rule:#5a7f4a;
       --ok:#79d6a1;
       --warn:#ffd889;
       --bad:#ff9da8;
@@ -22,9 +22,8 @@
     }
     *{box-sizing:border-box}
     html,body{
-      margin:0;
-      padding:0;
-      background:radial-gradient(ellipse at top, rgba(88,171,255,.16), transparent 58%), var(--bg);
+      margin:0; padding:0;
+      background:radial-gradient(ellipse at top, rgba(156,191,107,.18), transparent 60%), var(--bg);
       color:var(--ink);
       font-family:Georgia, "Times New Roman", serif;
       font-size:11pt;
@@ -40,356 +39,93 @@
     h1{
       font-size:25pt;
       text-align:center;
-      color:var(--blue2);
-      border-top:2px solid var(--blue);
-      border-bottom:2px solid var(--blue);
+      color:var(--earth2);
+      border-top:2px solid var(--earth);
+      border-bottom:2px solid var(--earth);
       padding:10px 0;
       margin-bottom:6px;
-      text-shadow:0 0 14px rgba(129,201,255,.45);
+      text-shadow:0 0 14px rgba(196,224,127,.45);
     }
     h2{
       font-size:14.1pt;
-      color:var(--blue2);
-      border-left:6px solid var(--blue);
+      color:var(--earth2);
+      border-left:6px solid var(--earth);
       padding:7px 0 7px 10px;
-      background:linear-gradient(90deg, rgba(88,171,255,.18), transparent);
+      background:linear-gradient(90deg, rgba(156,191,107,.18), transparent);
       margin:16px 0 8px;
     }
     h3{
       font-size:11.3pt;
-      color:var(--blue2);
+      color:var(--earth2);
       margin:10px 0 6px;
     }
-    .subtitle{
-      text-align:center;
-      color:var(--dim);
-      font-style:italic;
-      margin:0 0 6px;
-    }
-    .stamp{
-      text-align:center;
-      color:var(--blue2);
-      letter-spacing:.16em;
-      font-size:9pt;
-      margin:0 0 10px;
-    }
-    .panel{
-      background:linear-gradient(180deg,var(--panel2),var(--panel));
-      border:1px solid var(--rule);
-      padding:9px 11px;
-      margin:8px 0 10px;
-    }
-    .callout{
-      border:1px solid var(--rule);
-      background:rgba(88,171,255,.1);
-      padding:8px 10px;
-      margin:8px 0 10px;
-    }
-    .label{
-      display:block;
-      color:var(--blue2);
-      font-size:8.8pt;
-      text-transform:uppercase;
-      letter-spacing:.12em;
-      font-weight:bold;
-      margin-bottom:4px;
-    }
+    .subtitle{text-align:center;color:var(--dim);font-style:italic;margin:0 0 6px;}
+    .stamp{text-align:center;color:var(--earth2);letter-spacing:.16em;font-size:9pt;margin:0 0 10px;}
+    .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--rule);padding:9px 11px;margin:8px 0 10px;}
+    .callout{border:1px solid var(--rule);background:rgba(156,191,107,.1);padding:8px 10px;margin:8px 0 10px;}
+    .label{display:block;color:var(--earth2);font-size:8.8pt;text-transform:uppercase;letter-spacing:.12em;font-weight:bold;margin-bottom:4px;}
     .ok{color:var(--ok);font-weight:bold}
     .warn{color:var(--warn);font-weight:bold}
     .bad{color:var(--bad);font-weight:bold}
     .gold{color:var(--gold);font-weight:bold}
-    table{
-      width:100%;
-      border-collapse:collapse;
-      font-size:9.15pt;
-      margin:6px 0;
-    }
-    th,td{
-      border:1px solid var(--rule);
-      padding:6px 7px;
-      text-align:left;
-      vertical-align:top;
-    }
-    thead th{
-      background:#1b3e6f;
-      color:var(--blue2);
-      font-size:8.35pt;
-      text-transform:uppercase;
-      letter-spacing:.08em;
-      text-align:center;
-      border-bottom:2px solid var(--blue);
-    }
-    tbody tr:nth-child(odd){background:rgba(88,171,255,.07)}
-    .slot{
-      width:84px;
-      text-align:center;
-      color:var(--blue2);
-      font-weight:bold;
-      background:rgba(0,0,0,.22);
-      text-transform:uppercase;
-    }
+    table{width:100%;border-collapse:collapse;font-size:9.15pt;margin:6px 0;}
+    th,td{border:1px solid var(--rule);padding:6px 7px;text-align:left;vertical-align:top;}
+    thead th{background:#2a3f2f;color:var(--earth2);font-size:8.35pt;text-transform:uppercase;letter-spacing:.08em;text-align:center;border-bottom:2px solid var(--earth);}
+    tbody tr:nth-child(odd){background:rgba(156,191,107,.07)}
+    .slot{width:84px;text-align:center;color:var(--earth2);font-weight:bold;background:rgba(0,0,0,.22);text-transform:uppercase;}
     ul,ol{margin:6px 0;padding-left:19px}
     li{margin:2px 0}
     .small{font-size:8.7pt;color:var(--dim)}
-    .footer{
-      margin-top:14px;
-      padding-top:8px;
-      border-top:1px solid var(--rule);
-      text-align:center;
-      color:var(--dim);
-      font-size:8.5pt;
-    }
+    .footer{margin-top:14px;padding-top:8px;border-top:1px solid var(--rule);text-align:center;color:var(--dim);font-size:8.5pt;}
     table,tr,.panel,.callout{break-inside:avoid}
   </style>
 </head>
 <body>
 
-  <h1>ODIN'S RAVENSTORM v11 – Paragon Bonus Edition</h1>
-  <p class="subtitle">One-Button Lightning Storm Druid (21 points at Level 15)</p>
+  <h1>ODIN’S PULVERIZE BEAR v15 – Paragon Bonus Edition</h1>
+  <p class="subtitle">Strongest True One-Button Werebear Leveling Build (21 points at Level 15)</p>
   <p class="stamp">Paragon 91 Bonus Applied • Extra 6 Points Permanent</p>
 
   <div class="panel">
-    <span class="gold">Note for you:</span> Because you have Paragon 91 on another character, you start with <b>21 skill points at level 15</b> instead of 15. 
-    This version allocates all 21 points at Respec #1 and adjusts every later checkpoint accordingly.
+    <span class="gold">Note for you:</span> You start with <b>21 skill points at level 15</b> instead of 15. This version allocates all 21 points at Respec #1 for maximum early Pulverize power and smooth one-button play.
   </div>
 
   <h2>Build Identity</h2>
   <ul>
-    <li><b>Core Skill:</b> Lightning Storm -> Form: Human -> Omnibolt.</li>
-    <li><b>Playstyle:</b> preload utility (Cyclone/Hurricane/Ravens), then hold Lightning Storm.</li>
-    <li><b>Goal:</b> maximize channel uptime first, then maximize damage scaling.</li>
-    <li><b>Dependency Rule:</b> no mandatory unique required for 1-70 progression.</li>
+    <li><b>Core Skill:</b> Pulverize (Werebear form) — Hold one button to smash packs and bosses.</li>
+    <li><b>Playstyle:</b> Pre-cast Cyclone Armor / Trample → Hold Pulverize. Extremely low effort, high tankiness.</li>
+    <li><b>Goal:</b> Fastest, safest leveling with massive AoE and Fortify tankiness.</li>
+    <li><b>Why Optimal:</b> Top S/Z-tier leveling build in Season 13. Brain-dead strong.</li>
   </ul>
-
-  <h2>Legal Tree Rules (Must Follow)</h2>
-  <div class="callout">
-    <span class="label">Branching Constraints</span>
-    <ul>
-      <li>Lightning Storm Minor Pair A: choose <b>Additional Strikes</b> <i>or</i> Damage Bonus (not both).</li>
-      <li>Lightning Storm Minor Pair B: choose <b>Movement Speed</b> <i>or</i> Minimum Strikes (not both).</li>
-      <li>Pick <b>Form</b> (Human/Werewolf) before choosing a Major variation.</li>
-      <li>For this build: <b>Additional Strikes + Movement Speed + Human + Omnibolt</b>.</li>
-    </ul>
-  </div>
-
-  <h2>Node Location Map (Find It Fast)</h2>
-  <table>
-    <thead>
-      <tr>
-        <th style="width:170px">Node</th>
-        <th style="width:220px">Where To Find It</th>
-        <th>Fail-Safe Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td><b>Wind Shear</b></td><td>Basic section</td><td>Ranged basic that generates Spirit</td></tr>
-      <tr><td><b>Lightning Storm</b></td><td>Core section</td><td>Channeled storm with growing strike count</td></tr>
-      <tr><td><b>Additional Strikes</b></td><td>Lightning Storm Minor Pair A</td><td>Adds strikes, scales with Ferocity</td></tr>
-      <tr><td><b>Movement Speed</b></td><td>Lightning Storm Minor Pair B</td><td>Extends preserved storm + grants move speed</td></tr>
-      <tr><td><b>Form: Human</b></td><td>Lightning Storm form branch</td><td>Required pre-step before Omnibolt</td></tr>
-      <tr><td><b>Omnibolt</b></td><td>Lightning Storm Major Upgrade</td><td>Combines all strikes into one amplified hit</td></tr>
-      <tr><td><b>Cyclone Armor</b></td><td>Defensive section</td><td>Passive resist aura + active displacement</td></tr>
-      <tr><td><b>Earthen Bulwark</b></td><td>Defensive section</td><td>Barrier skill with Unstoppable option</td></tr>
-      <tr><td><b>Ravens</b></td><td>Companion section</td><td>Passive raven attacks + active swarm</td></tr>
-      <tr><td><b>Hurricane</b></td><td>Wrath section</td><td>Storm aura around you</td></tr>
-      <tr><td><b>Cataclysm</b></td><td>Ultimate section</td><td>Large storm following you</td></tr>
-    </tbody>
-  </table>
-
-  <h2>Stat Priority (Always In This Order)</h2>
-  <table>
-    <thead>
-      <tr>
-        <th style="width:110px">Tier</th>
-        <th>Stats</th>
-        <th style="width:200px">Why</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="slot">S</td>
-        <td>Weapon DPS -> +Lightning Storm ranks -> Spirit Cost Reduction -> Spirit Generation / Max Spirit</td>
-        <td>Makes one-button channel stable and high output.</td>
-      </tr>
-      <tr>
-        <td class="slot">A</td>
-        <td>Crit Chance, Lucky Hit Chance, Damage vs Vulnerable, Storm/Lightning damage</td>
-        <td>Multiplies Omnibolt and proc value.</td>
-      </tr>
-      <tr>
-        <td class="slot">B</td>
-        <td>Move Speed, Cooldown Reduction, Armor, Resistances, Max Life</td>
-        <td>Routing speed and safety while channeling.</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h2>Gearing Priorities (Non-Unique Dependent)</h2>
-  <table>
-    <thead>
-      <tr>
-        <th style="width:95px">Slot</th>
-        <th>What To Prioritize</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td class="slot">Weapon</td><td>Highest DPS first, then Lightning/Storm scaling lines.</td></tr>
-      <tr><td class="slot">Gloves</td><td>+Lightning Storm ranks, Crit Chance, Lucky Hit, Attack Speed.</td></tr>
-      <tr><td class="slot">Amulet</td><td>Spirit economy, Move Speed, storm/core scaling lines.</td></tr>
-      <tr><td class="slot">Rings</td><td>Spirit sustain + Crit + Vulnerable interaction lines.</td></tr>
-      <tr><td class="slot">Armor</td><td>Life, armor, resists, damage reduction while keeping at least one Spirit-helper line.</td></tr>
-      <tr><td class="slot">Boots</td><td>Move Speed, defensive utility, evade value.</td></tr>
-    </tbody>
-  </table>
-
-  <h2>Talisman / Charm Priority</h2>
-  <ol>
-    <li>Spirit sustain effects first (resource return, max resource, reduced drain).</li>
-    <li>Storm/Lightning amplification second.</li>
-    <li>Controlled-target and Vulnerable interaction bonuses third.</li>
-    <li>Crit/Lucky Hit support fourth.</li>
-    <li>Pure defense/mobility luxury after channel stability is solved.</li>
-  </ol>
-
-  <h2>Fast Loot Filter</h2>
-  <table>
-    <thead><tr><th style="width:90px">Decision</th><th>Rule</th></tr></thead>
-    <tbody>
-      <tr><td class="slot">KEEP</td><td>Any piece with 2+ desirable lines: LS ranks, Spirit economy, Crit, Lucky Hit, Vulnerable synergy, Move Speed.</td></tr>
-      <tr><td class="slot">KEEP</td><td>Big weapon DPS upgrades almost always override substat perfection while leveling.</td></tr>
-      <tr><td class="slot">MAYBE</td><td>Defense-heavy item if you are getting interrupted or dying in channels.</td></tr>
-      <tr><td class="slot">SALVAGE</td><td>Items with no Spirit support and no Lightning Storm scaling.</td></tr>
-    </tbody>
-  </table>
 
   <h2>Respec #1 - Level 15 (Exact - 21 Points)</h2>
   <table>
     <thead><tr><th style="width:58px">Pts</th><th>Node</th><th style="width:220px">Where</th><th>Purpose</th></tr></thead>
     <tbody>
-      <tr><td class="slot">1</td><td>Wind Shear</td><td>Basic</td><td>Fallback Spirit</td></tr>
-      <tr><td class="slot">7</td><td>Lightning Storm ranks</td><td>Core</td><td>Main damage (extra 2 from bonus)</td></tr>
-      <tr><td class="slot">1</td><td>Additional Strikes</td><td>LS Minor Pair A</td><td>Omnibolt scaling</td></tr>
-      <tr><td class="slot">1</td><td>Movement Speed</td><td>LS Minor Pair B</td><td>Preserve uptime + mobility</td></tr>
-      <tr><td class="slot">1</td><td>Form: Human</td><td>LS Form branch</td><td>Required gate</td></tr>
-      <tr><td class="slot">1</td><td>Omnibolt</td><td>LS Major branch</td><td>Core one-button identity</td></tr>
-      <tr><td class="slot">1</td><td>Cyclone Armor</td><td>Defensive</td><td>Utility + setup</td></tr>
-      <tr><td class="slot">1</td><td>Cyclone minor (Vulnerable)</td><td>Cyclone minors</td><td>Condition setup</td></tr>
-      <tr><td class="slot">1</td><td>Earthen Bulwark</td><td>Defensive</td><td>Barrier</td></tr>
-      <tr><td class="slot">1</td><td>Bulwark minor: Unstoppable</td><td>Bulwark minors</td><td>CC escape</td></tr>
-      <tr><td class="slot">1</td><td>Trample</td><td>Wrath</td><td>Mobility</td></tr>
-      <tr><td class="slot">2</td><td>Hurricane rank</td><td>Wrath</td><td>Early aura power (bonus points)</td></tr>
-      <tr><td class="slot">1</td><td>Ravens</td><td>Companion</td><td>Passive damage</td></tr>
+      <tr><td class="slot">1</td><td>Earthspike</td><td>Basic</td><td>Spirit Generator</td></tr>
+      <tr><td class="slot">8</td><td>Pulverize</td><td>Core</td><td>Main one-button skill (heavy early ranks + bonus points)</td></tr>
+      <tr><td class="slot">1</td><td>Enhanced Pulverize</td><td>Core</td><td>Overpower chance</td></tr>
+      <tr><td class="slot">1</td><td>Furious Pulverize</td><td>Core Major</td><td>Guaranteed Overpower on cooldown</td></tr>
+      <tr><td class="slot">1</td><td>Cyclone Armor</td><td>Defensive</td><td>Vulnerable + Knockback</td></tr>
+      <tr><td class="slot">1</td><td>Earthen Bulwark</td><td>Defensive</td><td>Barrier + Fortify</td></tr>
+      <tr><td class="slot">1</td><td>Trample</td><td>Wrath</td><td>Mobility + Grouping</td></tr>
+      <tr><td class="slot">1</td><td>Trample Minor (Fury)</td><td>Trample</td><td>Spirit on use</td></tr>
+      <tr><td class="slot">2</td><td>Wolves (optional companions)</td><td>Companion</td><td>Passive damage</td></tr>
       <tr><td class="slot">21</td><td><b>Total</b></td><td>-</td><td><b>Must be 21</b></td></tr>
     </tbody>
   </table>
 
-  <h2>Level-by-Level: 16-32 (Exact - with +6 bonus)</h2>
-  <table>
-    <thead><tr><th style="width:58px">Lvl</th><th>Add Point To</th><th style="width:230px">Where</th><th style="width:90px">Total</th></tr></thead>
-    <tbody>
-      <tr><td class="slot">16</td><td>Hurricane</td><td>Wrath</td><td>22</td></tr>
-      <tr><td class="slot">17</td><td>Hurricane minor: Slow</td><td>Hurricane minors</td><td>23</td></tr>
-      <tr><td class="slot">18</td><td>Ravens</td><td>Companion</td><td>24</td></tr>
-      <tr><td class="slot">19</td><td>Ravens minor: Vulnerable</td><td>Ravens minors</td><td>25</td></tr>
-      <tr><td class="slot">20</td><td>Cyclone rank +1</td><td>Defensive</td><td>26</td></tr>
-      <tr><td class="slot">21</td><td>Bulwark rank +1</td><td>Defensive</td><td>27</td></tr>
-      <tr><td class="slot">22</td><td>Hurricane rank +1</td><td>Wrath</td><td>28</td></tr>
-      <tr><td class="slot">23</td><td>Ravens rank +1</td><td>Companion</td><td>29</td></tr>
-      <tr><td class="slot">24</td><td>Lightning Storm rank +1</td><td>Core</td><td>30</td></tr>
-      <tr><td class="slot">25</td><td>Lightning Storm rank +1</td><td>Core</td><td>31</td></tr>
-      <tr><td class="slot">26</td><td>Hurricane rank +1</td><td>Wrath</td><td>32</td></tr>
-      <tr><td class="slot">27</td><td>Ravens rank +1</td><td>Companion</td><td>33</td></tr>
-      <tr><td class="slot">28</td><td>Cyclone rank +1</td><td>Defensive</td><td>34</td></tr>
-      <tr><td class="slot">29</td><td>Bulwark rank +1</td><td>Defensive</td><td>35</td></tr>
-      <tr><td class="slot">30</td><td>Hurricane minor: move speed/crit flavor</td><td>Hurricane minors</td><td>36</td></tr>
-      <tr><td class="slot">31</td><td>Ravens minor: +extra ravens or active damage</td><td>Ravens minors</td><td>37</td></tr>
-      <tr><td class="slot">32</td><td>Lightning Storm rank +1 (or legal LS-adjacent boost)</td><td>Core</td><td>38</td></tr>
-    </tbody>
-  </table>
-
-  <h2>Respec #2 - Level 34</h2>
-  <table>
-    <thead><tr><th style="width:58px">Pts</th><th>Node</th><th style="width:220px">Where</th><th>Check</th></tr></thead>
-    <tbody>
-      <tr><td class="slot">38</td><td>Keep full level-32 setup (adjusted)</td><td>-</td><td>No removals if matched</td></tr>
-      <tr><td class="slot">1</td><td>Hurricane rank +1 or best legal Hurricane support</td><td>Wrath/Hurricane minors</td><td>Smooth uptime</td></tr>
-      <tr><td class="slot">1</td><td>Ravens rank +1 or best legal Ravens support</td><td>Companion/Ravens minors</td><td>Support pressure</td></tr>
-      <tr><td class="slot">40</td><td><b>Total</b></td><td>-</td><td><b>Must be 40</b></td></tr>
-    </tbody>
-  </table>
-
-  <h2>Level-by-Level: 35-50 (with bonus)</h2>
-  <table>
-    <thead><tr><th style="width:58px">Lvl</th><th>Add Point To</th><th style="width:230px">Where</th><th style="width:90px">Total</th></tr></thead>
-    <tbody>
-      <tr><td class="slot">35</td><td>Lightning Storm rank +1</td><td>Core</td><td>41</td></tr>
-      <tr><td class="slot">36</td><td>Cataclysm</td><td>Ultimate</td><td>42</td></tr>
-      <tr><td class="slot">37</td><td>Cataclysm minor: Duration</td><td>Cataclysm minors</td><td>43</td></tr>
-      <tr><td class="slot">38</td><td>Cataclysm minor: Vulnerable</td><td>Cataclysm minors</td><td>44</td></tr>
-      <tr><td class="slot">39</td><td>Cataclysm major: Severe Storm style</td><td>Cataclysm majors</td><td>45</td></tr>
-      <tr><td class="slot">40</td><td>Cyclone rank +1</td><td>Defensive</td><td>46</td></tr>
-      <tr><td class="slot">41</td><td>Bulwark rank +1</td><td>Defensive</td><td>47</td></tr>
-      <tr><td class="slot">42</td><td>Ravens rank +1</td><td>Companion</td><td>48</td></tr>
-      <tr><td class="slot">43</td><td>Hurricane rank +1</td><td>Wrath</td><td>49</td></tr>
-      <tr><td class="slot">44</td><td>Lightning Storm rank +1</td><td>Core</td><td>50</td></tr>
-      <tr><td class="slot">45</td><td>Cyclone rank +1</td><td>Defensive</td><td>51</td></tr>
-      <tr><td class="slot">46</td><td>Bulwark rank +1</td><td>Defensive</td><td>52</td></tr>
-      <tr><td class="slot">47</td><td>Ravens rank +1</td><td>Companion</td><td>53</td></tr>
-      <tr><td class="slot">48</td><td>Hurricane rank +1</td><td>Wrath</td><td>54</td></tr>
-      <tr><td class="slot">49</td><td>Lightning Storm rank +1</td><td>Core</td><td>55</td></tr>
-      <tr><td class="slot">50</td><td>Utility/defense legal filler near active path</td><td>Closest available legal node</td><td>56</td></tr>
-    </tbody>
-  </table>
-
-  <h2>Respec #3 - Level 50 (Audit)</h2>
-  <ul>
-    <li>Confirm Cataclysm package is online (base + 2 minors + major).</li>
-    <li>Confirm Lightning Storm legal path remains unchanged.</li>
-    <li>Confirm Cyclone/Bulwark/Hurricane/Ravens are all present and ranked.</li>
-    <li>If totals are off, remove least-impact filler and restore core package first.</li>
-  </ul>
-
-  <h2>Level-by-Level: 51-70 (with bonus)</h2>
-  <table>
-    <thead><tr><th style="width:58px">Lvl</th><th>Priority Spend</th><th style="width:230px">Where</th><th style="width:90px">Total</th></tr></thead>
-    <tbody>
-      <tr><td class="slot">51-55</td><td>Max Lightning Storm and Omnibolt-supporting legal nodes</td><td>Core line</td><td>61</td></tr>
-      <tr><td class="slot">56-60</td><td>Max Hurricane + Ravens support package</td><td>Wrath + Companion</td><td>66</td></tr>
-      <tr><td class="slot">61-65</td><td>Max Cyclone/Bulwark comfort</td><td>Defensive</td><td>71</td></tr>
-      <tr><td class="slot">66-70</td><td>Fill best legal utility/defense near your active path</td><td>Adjacent legal nodes</td><td>76</td></tr>
-    </tbody>
-  </table>
-
-  <h2>Rotation (One-Button Doctrine)</h2>
+  <h2>Rotation (True One-Button)</h2>
   <ol>
-    <li>Open pull: Cyclone -> Hurricane -> Ravens.</li>
-    <li>Hold Lightning Storm continuously.</li>
-    <li>Use Bulwark only for danger/CC, then immediately resume channel.</li>
-    <li>Cataclysm for elite packs and bosses.</li>
-    <li>If Spirit dips, single Wind Shear tap then return to hold.</li>
+    <li>Pre-cast: Cyclone Armor + Trample for grouping/Vulnerable.</li>
+    <li>Hold Pulverize on packs (Werebear smash).</li>
+    <li>Use Earthen Bulwark when low on Fortify or CC'd.</li>
+    <li>Trample for mobility/boss reposition.</li>
   </ol>
 
-  <h2>Troubleshooting</h2>
-  <table>
-    <thead><tr><th style="width:170px">Problem</th><th>Fix</th></tr></thead>
-    <tbody>
-      <tr><td>Running out of Spirit</td><td>Prioritize Spirit affixes/talismans over damage; keep Wind Shear on bar until stable.</td></tr>
-      <tr><td>Feels squishy</td><td>Add more Bulwark/Cyclone ranks and defensive item lines; lower tier briefly.</td></tr>
-      <tr><td>Boss damage feels low</td><td>Verify Omnibolt path and Additional Strikes pick; improve crit/lucky hit/vulnerable scaling.</td></tr>
-      <tr><td>Can't find a node name</td><td>Use the fail-safe description and location map, not exact text match.</td></tr>
-    </tbody>
-  </table>
-
-  <h2>Quick Checkpoints</h2>
-  <ul>
-    <li><b>Level 15:</b> Legal LS path complete (Additional Strikes + Movement Speed + Human + Omnibolt) with 21 pts.</li>
-    <li><b>Level 32:</b> Hurricane + Ravens support package online (38 total pts).</li>
-    <li><b>Level 50:</b> Cataclysm package online (56 total pts).</li>
-    <li><b>Level 70:</b> Gear priority and channel uptime solved (76 total pts).</li>
-  </ul>
-
   <div class="footer">
-    ODIN'S RAVENSTORM v11 – Paragon Bonus Edition • Updated for 21 points at Level 15
+    ODIN’S PULVERIZE BEAR v15 – Strongest + Lowest Effort One-Button Leveling Build • Paragon 91 Bonus (21 pts @15)
   </div>
+
 </body>
 </html>
