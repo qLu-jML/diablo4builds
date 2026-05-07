@@ -1,0 +1,1219 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Falling Swife Paladin Build of Grok Awesomeness</title>
+  <style>
+    /* ===== DIABLO 4 / PALADIN · HAMMERDIN HOLY THEME ===== */
+    @page {
+      size: Letter;
+      margin: 0.45in;
+    }
+
+    :root {
+      --ink: #ead7a8;
+      /* parchment text */
+      --ink-dim: #b9a679;
+      --gold: #d4a017;
+      --gold-2: #f8d56a;
+      --blood: #a30b0b;
+      --blood-2: #e2b73a;
+      /* holy radiance gold accent */
+      --holy: #87b8ff;
+      /* heavenly blue accent */
+      --bg: #0a0805;
+      --panel: #1a1208;
+      --panel-2: #221808;
+      --rule: #6e4c12;
+      --shadow: 0 0 0 1px #5a3a08, 0 0 16px rgba(248, 213, 106, 0.20) inset;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+      font-size: 11.5pt;
+      line-height: 1.45;
+    }
+
+    body {
+      background:
+        radial-gradient(ellipse at top, rgba(248, 213, 106, 0.20), transparent 60%),
+        radial-gradient(ellipse at bottom, rgba(135, 184, 255, 0.08), transparent 70%),
+        var(--bg);
+      padding: 28px 36px 60px;
+      max-width: 8.5in;
+      margin: 0 auto;
+    }
+
+    /* === HEADINGS === */
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: "Trajan Pro", "Cinzel", "Book Antiqua", Georgia, serif;
+      color: var(--gold-2);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 26pt;
+      text-align: center;
+      text-shadow: 0 0 16px rgba(248, 213, 106, 0.7), 0 2px 0 #000;
+      border-top: 2px solid var(--gold);
+      border-bottom: 2px solid var(--gold);
+      padding: 14px 0 12px;
+      margin-bottom: 6px;
+    }
+
+    h2 {
+      font-size: 16pt;
+      color: var(--gold);
+      border-left: 6px solid var(--blood-2);
+      padding: 8px 0 8px 12px;
+      margin: 22px 0 10px;
+      background: linear-gradient(90deg, rgba(226, 183, 58, 0.20), transparent 70%);
+    }
+
+    h3 {
+      font-size: 12.5pt;
+      color: var(--gold-2);
+      margin: 14px 0 6px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: var(--ink-dim);
+      font-style: italic;
+      letter-spacing: 0.08em;
+      margin: 0 0 4px;
+    }
+
+    .stamp {
+      text-align: center;
+      color: var(--blood-2);
+      letter-spacing: 0.25em;
+      font-size: 9pt;
+      margin: 0 0 18px;
+    }
+
+    .ornament {
+      text-align: center;
+      color: var(--gold);
+      margin: 8px 0 18px;
+      letter-spacing: 0.4em;
+    }
+
+    .ornament::before,
+    .ornament::after {
+      content: "";
+      display: inline-block;
+      width: 26%;
+      border-top: 1px solid var(--gold);
+      vertical-align: middle;
+      margin: 0 12px;
+      opacity: 0.7;
+    }
+
+    .panel {
+      background: linear-gradient(180deg, var(--panel-2), var(--panel));
+      border: 1px solid var(--rule);
+      box-shadow: var(--shadow);
+      padding: 12px 16px;
+      margin: 8px 0 16px;
+      position: relative;
+    }
+
+    .panel::before,
+    .panel::after {
+      content: "";
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border: 2px solid var(--gold);
+    }
+
+    .panel::before {
+      top: -1px;
+      left: -1px;
+      border-right: none;
+      border-bottom: none;
+    }
+
+    .panel::after {
+      bottom: -1px;
+      right: -1px;
+      border-left: none;
+      border-top: none;
+    }
+
+    table.gear {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9.8pt;
+      margin: 6px 0 4px;
+    }
+
+    table.gear th,
+    table.gear td {
+      border: 1px solid var(--rule);
+      padding: 7px 8px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    table.gear thead th {
+      background: linear-gradient(180deg, #3a2308, #1a0d04);
+      color: var(--gold-2);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 9pt;
+      text-align: center;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    table.gear tbody tr:nth-child(odd) {
+      background: rgba(248, 213, 106, 0.06);
+    }
+
+    table.gear tbody tr:nth-child(even) {
+      background: rgba(135, 184, 255, 0.04);
+    }
+
+    table.gear td.slot {
+      color: var(--gold-2);
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: rgba(0, 0, 0, 0.45);
+      text-align: center;
+      width: 78px;
+    }
+
+    .unique {
+      color: #f8d56a;
+      font-weight: bold;
+      text-shadow: 0 0 6px rgba(248, 213, 106, 0.4);
+    }
+
+    .legend {
+      color: #c98c44;
+      font-weight: bold;
+    }
+
+    .greater {
+      color: #f5c84b;
+    }
+
+    .rune {
+      color: #87cefa;
+      font-weight: bold;
+    }
+
+    .gem {
+      color: #ff5252;
+      font-weight: bold;
+    }
+
+    .star::before {
+      content: "★ ";
+      color: var(--gold-2);
+    }
+
+    ol.workflow {
+      counter-reset: step;
+      list-style: none;
+      padding: 0;
+      margin: 8px 0;
+    }
+
+    ol.workflow>li {
+      counter-increment: step;
+      position: relative;
+      padding: 8px 10px 8px 56px;
+      margin: 6px 0;
+      background: rgba(0, 0, 0, 0.35);
+      border-left: 3px solid var(--gold);
+    }
+
+    ol.workflow>li::before {
+      content: counter(step);
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 34px;
+      height: 34px;
+      border: 2px solid var(--gold);
+      background: radial-gradient(circle, var(--blood-2), #6a4710);
+      color: #1a0d04;
+      text-align: center;
+      line-height: 30px;
+      font-family: "Cinzel", serif;
+      font-weight: bold;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(248, 213, 106, 0.7);
+    }
+
+    ol.workflow b {
+      color: var(--gold-2);
+    }
+
+    ul.glyphs,
+    ul.howto {
+      list-style: none;
+      padding: 0;
+      margin: 6px 0;
+    }
+
+    ul.glyphs>li,
+    ul.howto>li {
+      position: relative;
+      padding: 6px 8px 6px 28px;
+      border-bottom: 1px dotted var(--rule);
+    }
+
+    ul.glyphs>li::before {
+      content: "✦";
+      position: absolute;
+      left: 8px;
+      top: 6px;
+      color: var(--gold-2);
+    }
+
+    ul.howto>li::before {
+      content: "▸";
+      position: absolute;
+      left: 8px;
+      top: 6px;
+      color: var(--blood-2);
+    }
+
+    ul.glyphs b,
+    ul.howto b {
+      color: var(--gold-2);
+    }
+
+    .callout {
+      border: 1px solid var(--blood-2);
+      background: rgba(226, 183, 58, 0.10);
+      padding: 10px 14px;
+      margin: 10px 0 18px;
+    }
+
+    .callout .label {
+      font-family: "Cinzel", serif;
+      color: var(--blood-2);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 9.5pt;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .col {
+      flex: 1 1 280px;
+      min-width: 260px;
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--ink-dim);
+      font-size: 9pt;
+      border-top: 1px solid var(--rule);
+      margin-top: 22px;
+      padding-top: 10px;
+    }
+
+    .small {
+      font-size: 9pt;
+      color: var(--ink-dim);
+    }
+
+    table,
+    tr,
+    .panel,
+    ol.workflow>li {
+      break-inside: avoid;
+    }
+
+    h2 {
+      break-after: avoid;
+    }
+
+    @media print {
+      body {
+        background: #0a0805 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        padding: 0 12px;
+      }
+
+      h1 {
+        font-size: 22pt;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Falling Swife Paladin<br>Build of Grok Awesomeness</h1>
+  <p class="subtitle">Endgame Blessed Hammer + Falling Star · Disciple Oath / Arbiter Hammerdin</p>
+  <p class="stamp">— Cheat Sheet · Diablo IV Season 13 · Lord of Hatred —</p>
+
+  <div class="ornament"></div>
+
+  <div class="panel">
+    <p style="margin:0">
+      You are a swift holy comet. <b>Disciple Oath</b> keeps <span class="unique">Arbiter of Justice</span> form
+      up near-permanently. <b>Blessed Hammer</b> orbits you like a Hammerdin whirlwind via
+      <span class="unique">Disciple's Halo</span>. <b>Falling Star</b> dives reset cooldowns, stack Ascension,
+      apply Vulnerable, and proc auto-hammers through <span class="unique">Argent Veil</span>.
+      Spam <b>Rally (Words of Sacrifice)</b> to convert HP into Faith and Movement Speed —
+      <b>Defiance Aura</b> + life-on-hit refunds the cost.
+    </p>
+  </div>
+
+  <!-- ============== SKILLS & POINT ALLOCATION ============== -->
+  <h2>Skills · Oath &amp; Point Allocation</h2>
+
+  <p class="small" style="margin:0 0 6px">
+    <b>Oath: <span style="color:var(--gold-2)">Disciple</span></b> — Disciple skills proc 4.5s of <span
+      class="unique">Arbiter of Justice</span>,
+    +50% Disciple damage in form, Wing Strikes empowered. <b>Total budget:</b> 83 skill points (Level 70+).
+  </p>
+
+  <h3 style="margin-top:10px">Skill Bar (6 slots)</h3>
+  <table class="gear">
+    <thead>
+      <tr>
+        <th style="width:36px">#</th>
+        <th style="width:140px">Skill</th>
+        <th>Upgrades / Passives</th>
+        <th>Role</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="slot">1</td>
+        <td><b style="color:var(--gold-2)">Rally</b><br><span class="small">(Words of Sacrifice)</span></td>
+        <td>Enhanced + Rejuvenation / Critical Strike</td>
+        <td>Spam to convert HP → Faith + MS bursts. Life cost is paid back by Defiance Aura + life-on-hit.</td>
+      </tr>
+      <tr>
+        <td class="slot">2</td>
+        <td><b style="color:var(--gold-2)">Blessed Hammer</b></td>
+        <td>Max ranks + Divine Hammer + <b>Disciple's Halo</b><br><span class="small">(orbiting hammers)</span></td>
+        <td>Main DPS — held/spammed. Becomes a moving whirlwind around you.</td>
+      </tr>
+      <tr>
+        <td class="slot">3</td>
+        <td><b style="color:var(--gold-2)">Falling Star</b></td>
+        <td>Max ranks + Enhanced + <b>Starfall</b> (extra eruptions on landing) + Additional Charge + CDR via vuln kills
+        </td>
+        <td>Mobility + DPS. Dives proc Arbiter refresh, Ascension stacks, Vulnerable, and auto-hammers via Argent Veil.
+        </td>
+      </tr>
+      <tr>
+        <td class="slot">4</td>
+        <td><b style="color:var(--gold-2)">Condemn</b></td>
+        <td>Pull + Vulnerable + Stun + Disciple proc</td>
+        <td>Group enemies, stun, and refresh Arbiter via Disciple proc.</td>
+      </tr>
+      <tr>
+        <td class="slot">5</td>
+        <td><b style="color:var(--gold-2)">Defiance Aura</b></td>
+        <td>Unstoppable + Resolve stacks for DR + healing</td>
+        <td>Pop on cooldown — DR + healing covers Rally's life cost.</td>
+      </tr>
+      <tr>
+        <td class="slot">6</td>
+        <td><b style="color:var(--gold-2)">Fanaticism Aura</b><br><span class="small">(swap to Holy Light Aura for
+            healing)</span></td>
+        <td>Attack speed / damage buff</td>
+        <td>Permanent buff aura. Swap to Holy Light Aura when content needs sustain.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 style="margin-top:14px">Skill Tree Priority · Spend Points in This Order</h3>
+  <ol class="workflow">
+    <li><b>Max the Blessed Hammer cluster first</b> — base damage, cast speed, and the <b>Disciple's Halo</b> upgrade so
+      hammers orbit you.</li>
+    <li><b>Max Falling Star</b> — extra charges, Starfall eruptions, Vulnerable on landing, cooldown refund on vuln
+      kills.</li>
+    <li><b>Max Rally (Words of Sacrifice)</b> — extra charges + MS; this is your basic skill spam.</li>
+    <li><b>Arbiter of Justice cluster</b> — Seraph's Wings, Wing Strike recast, Movement Speed in form. The whole build
+      hinges on Arbiter uptime.</li>
+    <li><b>Defiance Aura + Condemn</b> — sustain + Vulnerable application. Don't max these until 1–4 are done.</li>
+    <li><b>Key Passives:</b> <span style="color:var(--gold-2)">Holy Punishment</span>, <span
+        style="color:var(--gold-2)">Ascension</span> (stacks in Arbiter — huge damage ramp), <span
+        style="color:var(--gold-2)">Celestial Strife</span> synergies.</li>
+  </ol>
+
+  <div class="callout">
+    <span class="label">Rotation · Brain-Dead Powerful Once Geared</span>
+    1) Pop <b>Defiance + Fanaticism Aura</b> for buffs and Resolve. &nbsp;
+    2) Spam <b>Rally</b> for instant Faith + MS (HP cost is healed back). &nbsp;
+    3) Hold/spam <b>Blessed Hammer</b> — the orbiting whirlwind does the work. &nbsp;
+    4) <b>Falling Star</b> dive into packs constantly — refreshes Arbiter, drops Starfall, applies Vulnerable, stacks
+    Ascension, procs auto-hammers. &nbsp;
+    5) <b>Condemn</b> to pull + stun + vuln. &nbsp;
+    6) In Arbiter form (~100% uptime), empowered Evade / Falling Star = insane mobility + extra hammer procs.
+  </div>
+
+  <div class="callout">
+    <span class="label">Order of Operations · the right way to gear up</span>
+    Get <b><span class="unique">Herald's Morningstar</span></b> first — without it the build doesn't scale.
+    Then chase <b><span class="unique">Argent Veil</span></b> for auto-hammer dives.
+    Build the <b><span class="unique">Light's Epiphany</span></b> 5-piece set in parallel from Whisper caches.
+    Slot Codex aspects on rares as placeholders so the build's effects are active even before BiS uniques drop.
+  </div>
+
+  <!-- ============== MASTER GEAR ============== -->
+  <h2>Master Gear · Best-in-Slot</h2>
+
+  <p class="small" style="margin:0 0 6px">
+    <span class="greater">★</span> = Greater Affix priority &nbsp;·&nbsp;
+    <span class="unique">Gold</span> = Unique &nbsp;·&nbsp;
+    <span class="rune">Rune</span> &nbsp;·&nbsp;
+    <span class="gem">Gem</span> &nbsp;·&nbsp;
+    <b style="color:var(--gold-2)">Bold MW affix</b> = crit pick at masterwork 4 / 8 / 12
+  </p>
+
+  <table class="gear">
+    <thead>
+      <tr>
+        <th style="width:78px">Slot</th>
+        <th style="width:160px">Item / Unique</th>
+        <th>Aspect to Imprint</th>
+        <th>Affixes (priority order)</th>
+        <th style="width:120px">Socket</th>
+        <th>Tempering Manuals</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="slot">Helm</td>
+        <td>Ancestral Legendary<br><span class="small">(or Mythic <span class="unique">Harlequin Crest</span>)</span>
+        </td>
+        <td><b>Glynn's Anvil</b> or <b>Firm Decree</b><br><span class="small">(max Resolve / DR per stack)</span></td>
+        <td>
+          <span class="star greater"><b>Cooldown Reduction</b></span><br>
+          <span class="star greater">Strength</span><br>
+          Armor<br>
+          Maximum Life <span class="small">(+2-3 Max Resolve Stacks bonus)</span>
+        </td>
+        <td><span class="gem">Grand Ruby</span><br><span class="small">(+Strength)</span></td>
+        <td>
+          Worldly Endurance: <b>Maximum Life</b> or Armor
+        </td>
+      </tr>
+      <tr>
+        <td class="slot">Chest</td>
+        <td>Ancestral Legendary<br><span class="small">(or Mythic <span class="unique">Tyrael's Might</span>)</span>
+        </td>
+        <td><b>Aspect of Disobedience</b> or <b>Indomitable</b><br><span class="small">(resists + DR in Arbiter)</span>
+        </td>
+        <td>
+          <span class="star greater"><b>Strength</b></span><br>
+          <span class="star greater">Maximum Life</span><br>
+          Armor<br>
+          Resistance to All Elements <span class="small">(+2-3 Max Resolve Stacks)</span>
+        </td>
+        <td><span class="rune">Cir</span> + <span class="rune">Gar</span><br><span class="small">Runeword: ~25% Crit
+            Chance</span></td>
+        <td>
+          Worldly Endurance: <b>Maximum Life</b> or Armor
+        </td>
+      </tr>
+      <tr>
+        <td class="slot">Pants</td>
+        <td>Ancestral Legendary</td>
+        <td><b>Aspect of the Indomitable</b><br><span class="small">(or Interdiction / Layered Wards)</span></td>
+        <td>
+          <span class="star greater"><b>Strength</b></span><br>
+          <span class="star greater">Maximum Life</span><br>
+          Armor<br>
+          Resistance to All Elements <span class="small">(+2-3 Max Resolve Stacks)</span>
+        </td>
+        <td><span class="rune">Bac</span> + <span class="rune">Ohm</span><br><span class="small">Runeword: mobility +
+            damage</span></td>
+        <td>
+          Worldly Endurance: <b>Maximum Life</b> or Armor
+        </td>
+      </tr>
+      <tr>
+        <td class="slot">Gloves</td>
+        <td>Ancestral Legendary</td>
+        <td><b>Aspect of Holy Punishment</b><br><span class="small">(Holy / Fire damage)</span></td>
+        <td>
+          <span class="star greater"><b>Cooldown Reduction</b></span><br>
+          <span class="star greater">Critical Strike Chance</span><br>
+          Critical Strike Damage<br>
+          Strength
+        </td>
+        <td>—</td>
+        <td>
+          Judicator/Disciple Finesse: <b>Disciple Damage</b><br>
+          (or Holy Damage)
+        </td>
+      </tr>
+      <tr>
+        <td class="slot">Boots</td>
+        <td>Ancestral Legendary</td>
+        <td><b>Aspect of the Arbiter's Zephyr</b><br><span class="small">(+ Ghostwalker — empowered Evade / Falling
+            Star)</span></td>
+        <td>
+          <span class="star greater"><b>Movement Speed</b></span><br>
+          <span class="star greater">Strength</span><br>
+          Armor<br>
+          Resistance to All Elements
+        </td>
+        <td>—</td>
+        <td>
+          Natural Motion: <b>Movement Speed</b><br>
+          (or Arbiter Duration)
+        </td>
+      </tr>
+      <tr>
+        <td class="slot">Amulet</td>
+        <td>Ancestral Legendary</td>
+        <td><b>Aspect of Ascension</b> + <b>Celestial Strife</b><br><span class="small">(Arbiter damage stacks +
+            vuln)</span></td>
+        <td>
+          <span class="star greater"><b>Movement Speed</b></span><br>
+          <span class="star greater">Cooldown Reduction</span><br>
+          Critical Strike Chance<br>
+          Strength
+        </td>
+        <td><span class="gem">Grand Diamond</span><br><span class="small">(All Resist)</span></td>
+        <td>
+          Judicator/Disciple Finesse: <b>Disciple Damage</b>
+        </td>
+      </tr>
+      <tr>
+        <td class="slot">Ring 1</td>
+        <td><span class="unique">Argent Veil</span><br><span class="small">CORE: Evade/Falling Star auto-casts Blessed
+            Hammer in Arbiter</span></td>
+        <td>fixed by unique</td>
+        <td>
+          <span class="star greater">Critical Strike Damage</span><br>
+          <span class="star greater"><b>Critical Strike Chance</b></span><br>
+          Cooldown Reduction<br>
+          Vulnerable Damage
+        </td>
+        <td><span class="gem">Grand Diamond</span></td>
+        <td>
+          Judicator/Disciple Finesse: <b>Crit Strike Damage</b>
+        </td>
+      </tr>
+      <tr>
+        <td class="slot">Ring 2</td>
+        <td>Ancestral Legendary</td>
+        <td><b>Utmost Glory</b> + <b>Redirected Force</b><br><span class="small">(Healthy/Weakened damage + block
+            scaling)</span></td>
+        <td>
+          <span class="star greater"><b>Critical Strike Damage</b></span><br>
+          <span class="star greater">Critical Strike Chance</span><br>
+          Cooldown Reduction<br>
+          Damage % / Vulnerable Damage<br>
+          Strength
+        </td>
+        <td><span class="gem">Grand Diamond</span></td>
+        <td>
+          Judicator/Disciple Finesse: <b>Disciple Damage</b>
+        </td>
+      </tr>
+      <tr>
+        <td class="slot">1H Mace</td>
+        <td><span class="unique">Herald's Morningstar</span><br><span class="small">CORE: +80–100%[x] Blessed Hammer dmg
+            + extra hammer spawns</span></td>
+        <td>fixed by unique</td>
+        <td>
+          <span class="star greater"><b>Strength</b></span><br>
+          <span class="star greater">Maximum Life</span><br>
+          Critical Strike Damage<br>
+          Vulnerable Damage
+        </td>
+        <td><span class="gem">Grand Ruby</span><br><span class="small">(Holy Damage)</span></td>
+        <td>
+          <b>Critical Strike Chance</b><br>
+          (or Judicator/Disciple Damage)
+        </td>
+      </tr>
+      <tr>
+        <td class="slot">Shield</td>
+        <td>Ancestral Legendary<br><span class="small">(or <span class="unique">Tyrael's Jurisdiction</span> / <span
+              class="unique">Herald of Zakarum</span>)</span></td>
+        <td><b>Lagera's Sovereignty</b> or <b>Aspect of Interdiction</b></td>
+        <td>
+          <span class="star greater"><b>Cooldown Reduction</b></span><br>
+          <span class="star greater">Strength</span><br>
+          Armor<br>
+          Vulnerable Damage / Block Chance <span class="small">(+2-3 Max Resolve Stacks)</span>
+        </td>
+        <td><span class="gem">Grand Ruby</span></td>
+        <td>
+          <b>Block Chance</b><br>
+          (or Armor-focused)
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <span class="label">Charm Set · Light's Epiphany</span>
+    Equip the <b>Light's Epiphany 5-piece Charm set</b> via the Talisman — massive Arbiter uptime, life/MS in form,
+    and triggers Ultimates for damage spikes. Slot a Unique Charm in the 6th slot for the bonus.
+  </div>
+
+  <div class="callout">
+    <span class="label">Runeword Rule</span>
+    Runewords need <b>two sockets in the same item</b> and CANNOT coexist with gems on that item.
+    Only Helm, Chest, Pants, or Two-Handed Weapons can host them. <span class="rune">Cir + Gar</span> goes on the chest
+    (consistent crit chance), <span class="rune">Bac + Ohm</span> goes on the pants (mobility + damage).
+    Gems go everywhere else.
+  </div>
+
+  <!-- ============== PER-ITEM WORKFLOW ============== -->
+  <h2>Per-Item Upgrade Workflow</h2>
+  <p class="small" style="margin:0 0 4px">
+    Repeat for every piece you slot in. Each step is a vendor or crafter — don't skip ahead.
+  </p>
+  <ol class="workflow">
+    <li><b>Acquire</b> Ancestral 800 ilvl item (or Unique). Look for <span class="greater">★ Greater Affixes</span> on a
+      priority stat above.</li>
+    <li><b>Imprint Aspect</b> at the <b>Occultist</b> (Codex unlock or extracted from a salvaged Legendary). Use the
+      aspect listed for that slot in the table above.</li>
+    <li><b>Add Socket</b> at the <b>Jeweler</b> — slot the listed gem or runeword pair.</li>
+    <li><b>Temper twice</b> at the <b>Blacksmith</b> with the listed Worldly + Offensive/Defensive/Utility manuals until
+      the right affix rolls.</li>
+    <li><b>Enchant</b> at the <b>Occultist</b> — re-roll the lowest-priority affix toward the next missing entry in the
+      table.</li>
+    <li><b>Masterwork 12×</b> at the <b>Blacksmith</b>. The crit upgrades at <b>4 / 8 / 12</b> should land on the
+      <b>bolded</b> affix in the table — reset and re-roll if they don't.</li>
+  </ol>
+
+  <!-- ============== GLYPHS ============== -->
+  <h2>Paragon Glyphs</h2>
+  <p class="small" style="margin:0 0 4px">
+    Skill points and full board paths skipped on purpose — only the glyphs matter for this sheet.
+    Level glyphs in <b>The Pit</b>; they unlock max radius + legendary bonus at <b>level 46</b>.
+    Place each glyph on the listed board.
+  </p>
+  <table class="gear" style="margin-top:6px">
+    <thead>
+      <tr>
+        <th style="width:36px">#</th>
+        <th>Board</th>
+        <th>Glyph</th>
+        <th>What it does</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="slot">1</td>
+        <td>Starting Board</td>
+        <td><b style="color:var(--gold-2)">Spirit</b></td>
+        <td>Core damage / sustain</td>
+      </tr>
+      <tr>
+        <td class="slot">2</td>
+        <td>Beacon Board</td>
+        <td><b style="color:var(--gold-2)">Honed</b></td>
+        <td>Attack Speed / Crit</td>
+      </tr>
+      <tr>
+        <td class="slot">3</td>
+        <td>Castle Board</td>
+        <td><b style="color:var(--gold-2)">Arbiter</b></td>
+        <td>Huge armor scaling + Arbiter form power</td>
+      </tr>
+      <tr>
+        <td class="slot">4</td>
+        <td>Relentless Board</td>
+        <td><b style="color:var(--gold-2)">Canny</b></td>
+        <td>Damage reduction / crit</td>
+      </tr>
+      <tr>
+        <td class="slot">5</td>
+        <td>Shield Bearer Board</td>
+        <td><b style="color:var(--gold-2)">Apostle</b></td>
+        <td>Disciple skill multiplier (Blessed Hammer + Falling Star)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="small" style="margin:8px 0 0">
+    <b>Glyph leveling order:</b> Apostle → Spirit → Honed → Canny → Arbiter.
+    Rush each board's <b>Legendary Node</b> first, then the <b>Glyph socket</b>. The two key legendary nodes are
+    <b>Castle</b> (armor → damage) and <b>Apostle</b> (Disciple multiplier).
+  </p>
+
+  <!-- ============== PARAGON DIAGRAM ============== -->
+  <h2>Optimized Paragon Path · Diagram</h2>
+  <p class="small" style="margin:0 0 6px">
+    Homebrew path. Five boards in this exact attach order: <b>Starting → Beacon → Castle → Relentless → Shield
+      Bearer</b>.
+    Rotate each board so the entry gate, the legendary node, and the glyph socket fall on the same path.
+    Rush <b>Legendary → Glyph socket → threshold Rare</b> on each board, then backfill magic nodes once the spine is
+    done.
+  </p>
+
+  <div style="background:#0e0a05;border:1px solid var(--rule);padding:12px;margin:8px 0 14px;box-shadow:var(--shadow);">
+    <svg viewBox="0 0 720 540" xmlns="http://www.w3.org/2000/svg"
+      style="width:100%;height:auto;display:block;font-family:Georgia,serif;">
+      <defs>
+        <linearGradient id="bdHead" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0" stop-color="#3a2308" />
+          <stop offset="1" stop-color="#1a0d04" />
+        </linearGradient>
+        <linearGradient id="bdBody" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0" stop-color="#1a1208" />
+          <stop offset="1" stop-color="#0a0805" />
+        </linearGradient>
+        <radialGradient id="legendaryGlow" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0" stop-color="#ffe88a" />
+          <stop offset="0.6" stop-color="#d4a017" />
+          <stop offset="1" stop-color="#5a3a08" />
+        </radialGradient>
+        <radialGradient id="glyphGlow" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0" stop-color="#cfe5ff" />
+          <stop offset="0.6" stop-color="#5d8acf" />
+          <stop offset="1" stop-color="#1a2c4a" />
+        </radialGradient>
+        <radialGradient id="startGlow" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0" stop-color="#fffbe0" />
+          <stop offset="1" stop-color="#d4a017" />
+        </radialGradient>
+        <marker id="arrowHead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6"
+          orient="auto-start-reverse">
+          <path d="M0 0 L10 5 L0 10 z" fill="#f8d56a" />
+        </marker>
+      </defs>
+
+      <!-- ===== BOARD 1: STARTING (Spirit) ===== -->
+      <g transform="translate(20,20)">
+        <rect width="180" height="220" fill="url(#bdBody)" stroke="#d4a017" stroke-width="1.5" />
+        <rect width="180" height="26" fill="url(#bdHead)" stroke="#d4a017" stroke-width="1.5" />
+        <text x="90" y="18" text-anchor="middle" fill="#f8d56a" font-size="12" font-weight="bold" letter-spacing="2">1 ·
+          STARTING</text>
+        <text x="90" y="40" text-anchor="middle" fill="#b9a679" font-size="9">Default rotation</text>
+
+        <!-- Class start -->
+        <circle cx="90" cy="120" r="14" fill="url(#startGlow)" stroke="#fff" stroke-width="1" />
+        <text x="90" y="124" text-anchor="middle" fill="#1a0d04" font-size="9" font-weight="bold">START</text>
+
+        <!-- Path line from start UP to top exit gate -->
+        <path d="M90 106 L90 60" stroke="#f8d56a" stroke-width="3" fill="none" stroke-linecap="round"
+          marker-end="url(#arrowHead)" />
+
+        <!-- Glyph socket: Spirit (hex) -->
+        <polygon points="90,68 102,75 102,89 90,96 78,89 78,75" fill="url(#glyphGlow)" stroke="#87b8ff"
+          stroke-width="1.5" />
+        <text x="90" y="85" text-anchor="middle" fill="#fff" font-size="8" font-weight="bold">SPIRIT</text>
+
+        <!-- Strength rare node (left of glyph) -->
+        <rect x="40" y="110" width="32" height="20" fill="#3a2308" stroke="#d4a017" stroke-width="1" />
+        <text x="56" y="123" text-anchor="middle" fill="#f8d56a" font-size="7" font-weight="bold">+STR</text>
+
+        <!-- Magic dots -->
+        <circle cx="120" cy="110" r="2" fill="#87b8ff" />
+        <circle cx="130" cy="115" r="2" fill="#87b8ff" />
+        <circle cx="60" cy="160" r="2" fill="#87b8ff" />
+        <circle cx="120" cy="170" r="2" fill="#87b8ff" />
+        <circle cx="90" cy="180" r="2" fill="#87b8ff" />
+
+        <!-- Exit gate label (top) -->
+        <rect x="76" y="44" width="28" height="14" fill="#5a3a08" stroke="#f8d56a" />
+        <text x="90" y="54" text-anchor="middle" fill="#f8d56a" font-size="8" font-weight="bold">▲ TO BEACON</text>
+
+        <!-- Footer -->
+        <text x="90" y="208" text-anchor="middle" fill="#ead7a8" font-size="8.5">Spirit glyph · sustain &amp; crit
+          dmg</text>
+      </g>
+
+      <!-- ARROW Start → Beacon -->
+      <line x1="200" y1="130" x2="240" y2="130" stroke="#f8d56a" stroke-width="2.5" marker-end="url(#arrowHead)" />
+
+      <!-- ===== BOARD 2: BEACON (Honed) ===== -->
+      <g transform="translate(240,20)">
+        <rect width="180" height="220" fill="url(#bdBody)" stroke="#d4a017" stroke-width="1.5" />
+        <rect width="180" height="26" fill="url(#bdHead)" stroke="#d4a017" stroke-width="1.5" />
+        <text x="90" y="18" text-anchor="middle" fill="#f8d56a" font-size="12" font-weight="bold" letter-spacing="2">2 ·
+          BEACON</text>
+        <text x="90" y="40" text-anchor="middle" fill="#b9a679" font-size="9">Rotate 90° CCW</text>
+
+        <!-- Entry gate (left) -->
+        <rect x="6" y="113" width="22" height="14" fill="#5a3a08" stroke="#f8d56a" />
+        <text x="17" y="123" text-anchor="middle" fill="#f8d56a" font-size="7" font-weight="bold">IN</text>
+
+        <!-- Path: left → through glyph → through legendary → right exit -->
+        <path d="M28 120 L72 120 L90 110 L130 110 L160 120" stroke="#f8d56a" stroke-width="3" fill="none"
+          stroke-linecap="round" marker-end="url(#arrowHead)" />
+
+        <!-- Glyph socket: Honed -->
+        <polygon points="72,98 84,105 84,119 72,126 60,119 60,105" fill="url(#glyphGlow)" stroke="#87b8ff"
+          stroke-width="1.5" />
+        <text x="72" y="115" text-anchor="middle" fill="#fff" font-size="8" font-weight="bold">HONED</text>
+
+        <!-- Legendary node: Beacon -->
+        <polygon points="125,98 132,113 148,113 135,123 140,138 125,128 110,138 115,123 102,113 118,113"
+          fill="url(#legendaryGlow)" stroke="#fff" stroke-width="1" />
+        <text x="125" y="155" text-anchor="middle" fill="#f8d56a" font-size="8" font-weight="bold">BEACON</text>
+        <text x="125" y="165" text-anchor="middle" fill="#ead7a8" font-size="7">+90% dmg w/ ally</text>
+
+        <!-- Crit rare node above glyph -->
+        <rect x="48" y="62" width="50" height="20" fill="#3a2308" stroke="#d4a017" stroke-width="1" />
+        <text x="73" y="75" text-anchor="middle" fill="#f8d56a" font-size="7" font-weight="bold">+CRIT CHC</text>
+
+        <!-- Exit gate (right) -->
+        <rect x="152" y="113" width="22" height="14" fill="#5a3a08" stroke="#f8d56a" />
+        <text x="163" y="123" text-anchor="middle" fill="#f8d56a" font-size="7" font-weight="bold">OUT</text>
+
+        <text x="90" y="208" text-anchor="middle" fill="#ead7a8" font-size="8.5">Honed glyph · attack speed/crit</text>
+      </g>
+
+      <!-- ARROW Beacon → Castle -->
+      <line x1="420" y1="130" x2="460" y2="130" stroke="#f8d56a" stroke-width="2.5" marker-end="url(#arrowHead)" />
+
+      <!-- ===== BOARD 3: CASTLE (Arbiter) — THE BIG ONE ===== -->
+      <g transform="translate(460,20)">
+        <rect width="240" height="220" fill="url(#bdBody)" stroke="#d4a017" stroke-width="2" />
+        <rect width="240" height="26" fill="url(#bdHead)" stroke="#d4a017" stroke-width="2" />
+        <text x="120" y="18" text-anchor="middle" fill="#f8d56a" font-size="12" font-weight="bold" letter-spacing="2">3
+          · CASTLE ★ KEY</text>
+        <text x="120" y="40" text-anchor="middle" fill="#b9a679" font-size="9">Rotate 90° CW · biggest damage
+          board</text>
+
+        <!-- Entry gate (left) -->
+        <rect x="6" y="113" width="22" height="14" fill="#5a3a08" stroke="#f8d56a" />
+        <text x="17" y="123" text-anchor="middle" fill="#f8d56a" font-size="7" font-weight="bold">IN</text>
+
+        <!-- Path: left → glyph → legendary → bottom exit -->
+        <path d="M28 120 L80 120 L100 110 L150 110 L170 120 L170 165 L140 195" stroke="#f8d56a" stroke-width="3.5"
+          fill="none" stroke-linecap="round" marker-end="url(#arrowHead)" />
+
+        <!-- Glyph socket: Arbiter -->
+        <polygon points="80,98 94,105 94,119 80,126 66,119 66,105" fill="url(#glyphGlow)" stroke="#87b8ff"
+          stroke-width="1.5" />
+        <text x="80" y="115" text-anchor="middle" fill="#fff" font-size="8" font-weight="bold">ARBITER</text>
+
+        <!-- Legendary: Castle (massive) -->
+        <polygon points="155,90 165,108 184,108 168,120 175,140 155,128 135,140 142,120 126,108 145,108"
+          fill="url(#legendaryGlow)" stroke="#fff" stroke-width="1.5" />
+        <text x="155" y="158" text-anchor="middle" fill="#f8d56a" font-size="9" font-weight="bold">CASTLE</text>
+        <text x="155" y="168" text-anchor="middle" fill="#ead7a8" font-size="7.5">125% Armor → Damage</text>
+
+        <!-- Strength rares -->
+        <rect x="36" y="62" width="50" height="20" fill="#3a2308" stroke="#d4a017" stroke-width="1" />
+        <text x="61" y="75" text-anchor="middle" fill="#f8d56a" font-size="7" font-weight="bold">+STR</text>
+        <rect x="36" y="155" width="50" height="20" fill="#3a2308" stroke="#d4a017" stroke-width="1" />
+        <text x="61" y="168" text-anchor="middle" fill="#f8d56a" font-size="7" font-weight="bold">+ARMOR</text>
+
+        <!-- Magic dots -->
+        <circle cx="110" cy="160" r="2" fill="#87b8ff" />
+        <circle cx="120" cy="170" r="2" fill="#87b8ff" />
+        <circle cx="200" cy="120" r="2" fill="#87b8ff" />
+        <circle cx="210" cy="140" r="2" fill="#87b8ff" />
+
+        <!-- Exit gate (bottom) -->
+        <rect x="126" y="196" width="28" height="14" fill="#5a3a08" stroke="#f8d56a" />
+        <text x="140" y="206" text-anchor="middle" fill="#f8d56a" font-size="7" font-weight="bold">▼ TO
+          RELENTLESS</text>
+      </g>
+
+      <!-- ARROW Castle → Relentless (down through middle column) -->
+      <path d="M580 240 L580 260 L460 260 L460 280" stroke="#f8d56a" stroke-width="2.5" fill="none"
+        marker-end="url(#arrowHead)" />
+
+      <!-- ===== BOARD 4: RELENTLESS (Canny) ===== -->
+      <g transform="translate(240,280)">
+        <rect width="220" height="220" fill="url(#bdBody)" stroke="#d4a017" stroke-width="1.5" />
+        <rect width="220" height="26" fill="url(#bdHead)" stroke="#d4a017" stroke-width="1.5" />
+        <text x="110" y="18" text-anchor="middle" fill="#f8d56a" font-size="12" font-weight="bold" letter-spacing="2">4
+          · RELENTLESS</text>
+        <text x="110" y="40" text-anchor="middle" fill="#b9a679" font-size="9">Default rotation</text>
+
+        <!-- Entry gate (top) -->
+        <rect x="96" y="44" width="28" height="14" fill="#5a3a08" stroke="#f8d56a" />
+        <text x="110" y="54" text-anchor="middle" fill="#f8d56a" font-size="7" font-weight="bold">▲ IN</text>
+
+        <!-- Path: top → glyph → legendary → left exit -->
+        <path d="M110 58 L110 90 L130 110 L155 110 L155 150 L70 165 L20 145" stroke="#f8d56a" stroke-width="3"
+          fill="none" stroke-linecap="round" marker-end="url(#arrowHead)" />
+
+        <!-- Glyph socket: Canny -->
+        <polygon points="130,98 142,105 142,119 130,126 118,119 118,105" fill="url(#glyphGlow)" stroke="#87b8ff"
+          stroke-width="1.5" />
+        <text x="130" y="115" text-anchor="middle" fill="#fff" font-size="8" font-weight="bold">CANNY</text>
+
+        <!-- Legendary: Relentless -->
+        <polygon points="155,128 162,143 178,143 165,153 170,168 155,158 140,168 145,153 132,143 148,143"
+          fill="url(#legendaryGlow)" stroke="#fff" stroke-width="1" />
+        <text x="155" y="184" text-anchor="middle" fill="#f8d56a" font-size="8" font-weight="bold">RELENTLESS</text>
+        <text x="155" y="194" text-anchor="middle" fill="#ead7a8" font-size="7">+30% CDR / +80% dmg moving</text>
+
+        <!-- Vuln/Crit Damage rare -->
+        <rect x="55" y="98" width="50" height="20" fill="#3a2308" stroke="#d4a017" stroke-width="1" />
+        <text x="80" y="111" text-anchor="middle" fill="#f8d56a" font-size="7" font-weight="bold">+VULN DMG</text>
+
+        <!-- Magic dots -->
+        <circle cx="180" cy="100" r="2" fill="#87b8ff" />
+        <circle cx="190" cy="120" r="2" fill="#87b8ff" />
+        <circle cx="60" cy="160" r="2" fill="#87b8ff" />
+        <circle cx="50" cy="180" r="2" fill="#87b8ff" />
+
+        <!-- Exit gate (left) -->
+        <rect x="6" y="138" width="22" height="14" fill="#5a3a08" stroke="#f8d56a" />
+        <text x="17" y="148" text-anchor="middle" fill="#f8d56a" font-size="7" font-weight="bold">OUT ◀</text>
+      </g>
+
+      <!-- ARROW Relentless → Shield Bearer -->
+      <line x1="240" y1="390" x2="200" y2="390" stroke="#f8d56a" stroke-width="2.5" marker-end="url(#arrowHead)" />
+
+      <!-- ===== BOARD 5: SHIELD BEARER (Apostle) ===== -->
+      <g transform="translate(20,280)">
+        <rect width="180" height="220" fill="url(#bdBody)" stroke="#d4a017" stroke-width="1.5" />
+        <rect width="180" height="26" fill="url(#bdHead)" stroke="#d4a017" stroke-width="1.5" />
+        <text x="90" y="18" text-anchor="middle" fill="#f8d56a" font-size="12" font-weight="bold" letter-spacing="2">5 ·
+          SHIELD BEARER</text>
+        <text x="90" y="40" text-anchor="middle" fill="#b9a679" font-size="9">Rotate 180° · terminal board</text>
+
+        <!-- Entry gate (right) -->
+        <rect x="152" y="103" width="22" height="14" fill="#5a3a08" stroke="#f8d56a" />
+        <text x="163" y="113" text-anchor="middle" fill="#f8d56a" font-size="7" font-weight="bold">▶ IN</text>
+
+        <!-- Path: right → glyph → legendary -->
+        <path d="M152 110 L120 110 L100 95 L70 95 L55 130 L75 165" stroke="#f8d56a" stroke-width="3" fill="none"
+          stroke-linecap="round" />
+
+        <!-- Glyph socket: Apostle -->
+        <polygon points="120,82 132,89 132,103 120,110 108,103 108,89" fill="url(#glyphGlow)" stroke="#87b8ff"
+          stroke-width="1.5" />
+        <text x="120" y="100" text-anchor="middle" fill="#fff" font-size="8" font-weight="bold">APOSTLE</text>
+
+        <!-- Legendary: Shield Bearer -->
+        <polygon points="60,108 67,123 83,123 70,133 75,148 60,138 45,148 50,133 37,123 53,123"
+          fill="url(#legendaryGlow)" stroke="#fff" stroke-width="1" />
+        <text x="60" y="160" text-anchor="middle" fill="#f8d56a" font-size="8" font-weight="bold">SHIELD BEARER</text>
+        <text x="60" y="170" text-anchor="middle" fill="#ead7a8" font-size="7">+15.5% block damage</text>
+
+        <!-- Disciple Damage rare -->
+        <rect x="100" y="60" width="60" height="20" fill="#3a2308" stroke="#d4a017" stroke-width="1" />
+        <text x="130" y="73" text-anchor="middle" fill="#f8d56a" font-size="7" font-weight="bold">+DISCIPLE DMG</text>
+
+        <!-- Magic dots -->
+        <circle cx="40" cy="60" r="2" fill="#87b8ff" />
+        <circle cx="160" cy="170" r="2" fill="#87b8ff" />
+        <circle cx="100" cy="180" r="2" fill="#87b8ff" />
+
+        <text x="90" y="208" text-anchor="middle" fill="#ead7a8" font-size="8.5">Apostle glyph · Disciple
+          multiplier</text>
+      </g>
+
+      <!-- LEGEND BOX -->
+      <g transform="translate(485,295)">
+        <rect width="215" height="200" fill="#0a0805" stroke="#6e4c12" stroke-width="1" />
+        <text x="107" y="16" text-anchor="middle" fill="#f8d56a" font-size="10" font-weight="bold"
+          letter-spacing="2">LEGEND</text>
+        <line x1="10" y1="22" x2="205" y2="22" stroke="#6e4c12" />
+
+        <circle cx="20" cy="38" r="7" fill="url(#startGlow)" />
+        <text x="34" y="42" fill="#ead7a8" font-size="9">Class start (board 1 only)</text>
+
+        <polygon points="20,55 28,60 28,70 20,75 12,70 12,60" fill="url(#glyphGlow)" stroke="#87b8ff" />
+        <text x="34" y="68" fill="#ead7a8" font-size="9">Glyph socket</text>
+
+        <polygon points="20,90 25,103 38,103 28,111 32,123 20,116 8,123 12,111 2,103 15,103" fill="url(#legendaryGlow)"
+          stroke="#fff" stroke-width="0.7" />
+        <text x="44" y="108" fill="#ead7a8" font-size="9">Legendary node</text>
+
+        <rect x="10" y="128" width="20" height="14" fill="#3a2308" stroke="#d4a017" />
+        <text x="34" y="138" fill="#ead7a8" font-size="9">Threshold rare (60+ Str)</text>
+
+        <circle cx="20" cy="156" r="2" fill="#87b8ff" />
+        <text x="34" y="159" fill="#ead7a8" font-size="9">Magic node (skip until end)</text>
+
+        <line x1="10" y1="175" x2="30" y2="175" stroke="#f8d56a" stroke-width="3" marker-end="url(#arrowHead)" />
+        <text x="34" y="178" fill="#ead7a8" font-size="9">Optimal point-spend path</text>
+
+        <rect x="10" y="187" width="20" height="10" fill="#5a3a08" stroke="#f8d56a" />
+        <text x="34" y="195" fill="#ead7a8" font-size="9">Board attachment gate</text>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Per-board breakdown table -->
+  <h3 style="margin-top:6px">Per-Board Spend Order</h3>
+  <table class="gear">
+    <thead>
+      <tr>
+        <th style="width:32px">#</th>
+        <th style="width:120px">Board</th>
+        <th style="width:90px">Rotation</th>
+        <th style="width:80px">Entry → Exit</th>
+        <th>Spend Order (in this exact order)</th>
+        <th style="width:120px">Why</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="slot">1</td>
+        <td><b>Starting</b><br><span class="small">Spirit glyph</span></td>
+        <td>Default</td>
+        <td>Center → ▲ Top</td>
+        <td>
+          <b>1.</b> Class Start → straight up the spine<br>
+          <b>2.</b> Spirit glyph socket (slot Spirit)<br>
+          <b>3.</b> Adjacent Strength rare (threshold for Spirit's crit damage bonus)<br>
+          <b>4.</b> Top gate → Beacon
+        </td>
+        <td class="small">Foundation: get Spirit live ASAP for crit damage scaling.</td>
+      </tr>
+      <tr>
+        <td class="slot">2</td>
+        <td><b>Beacon</b><br><span class="small">Honed glyph</span></td>
+        <td>90° CCW</td>
+        <td>◀ Left → ▶ Right</td>
+        <td>
+          <b>1.</b> Enter from left gate<br>
+          <b>2.</b> Honed glyph socket (slot Honed)<br>
+          <b>3.</b> <b>Beacon Legendary</b> (+90% damage with ally — Raheir/Varyana count)<br>
+          <b>4.</b> Crit Chance threshold rare<br>
+          <b>5.</b> Right gate → Castle
+        </td>
+        <td class="small">Mercenary multiplier — keep Raheir summoned 100% uptime.</td>
+      </tr>
+      <tr>
+        <td class="slot">3</td>
+        <td><b>Castle</b> ★<br><span class="small">Arbiter glyph</span></td>
+        <td>90° CW</td>
+        <td>◀ Left → ▼ Bottom</td>
+        <td>
+          <b>1.</b> Enter from left gate<br>
+          <b>2.</b> Arbiter glyph socket (slot Arbiter)<br>
+          <b>3.</b> <b>Castle Legendary</b> (125% Armor → Damage — biggest damage node in build)<br>
+          <b>4.</b> Strength threshold rare (north of glyph)<br>
+          <b>5.</b> Armor threshold rare (south of legendary)<br>
+          <b>6.</b> Bottom gate → Relentless
+        </td>
+        <td class="small">★ Biggest damage payoff. Stack Armor and Strength together.</td>
+      </tr>
+      <tr>
+        <td class="slot">4</td>
+        <td><b>Relentless</b><br><span class="small">Canny glyph</span></td>
+        <td>Default</td>
+        <td>▲ Top → ◀ Left</td>
+        <td>
+          <b>1.</b> Enter from top gate<br>
+          <b>2.</b> Canny glyph socket (slot Canny)<br>
+          <b>3.</b> <b>Relentless Legendary</b> (30% CDR + 80% damage while moving)<br>
+          <b>4.</b> Vulnerable Damage threshold rare<br>
+          <b>5.</b> Left gate → Shield Bearer
+        </td>
+        <td class="small">Falling Star spam keeps you "moving" — uptime ~100%.</td>
+      </tr>
+      <tr>
+        <td class="slot">5</td>
+        <td><b>Shield Bearer</b><br><span class="small">Apostle glyph</span></td>
+        <td>180°</td>
+        <td>▶ Right → terminal</td>
+        <td>
+          <b>1.</b> Enter from right gate<br>
+          <b>2.</b> Disciple Damage threshold rare<br>
+          <b>3.</b> Apostle glyph socket (slot Apostle)<br>
+          <b>4.</b> <b>Shield Bearer Legendary</b> (+15.5% block damage — multiplies with 100% block from gear)<br>
+          <b>5.</b> Magic node backfill from here
+        </td>
+        <td class="small">Apostle here so its radius covers the Disciple-damage rare.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <span class="label">Glyph Leveling Order · same as paragon spend order</span>
+    <b>1. Apostle</b> (biggest multiplier on Blessed Hammer + Falling Star) →
+    <b>2. Spirit</b> (crit damage / sustain) →
+    <b>3. Honed</b> (attack speed + crit chance) →
+    <b>4. Canny</b> (damage reduction + crit) →
+    <b>5. Arbiter</b> (armor scaling + form power, levels last because it's already strong base).
+    Push <b>The Pit</b> at ~3-minute clear difficulty for fastest XP. Each glyph caps at level 100; legendary bonus
+    unlocks at 46.
+  </div>
+
+  <div class="callout">
+    <span class="label">Backfill Strategy · spend points 200 → 342</span>
+    Once the spine path is done (~120 points), backfill in this order:
+    (1) any remaining <b>Strength</b> magic nodes within Castle's glyph radius (multiplies the 125% conversion);
+    (2) <b>Armor</b> magic nodes anywhere on Castle &amp; Shield Bearer;
+    (3) <b>Max Resolve Stacks</b> rares for tankiness;
+    (4) <b>CDR</b> magic nodes near Relentless;
+    (5) at Paragon 245+, fill remaining defensive magic clusters — those last ~50 nodes add 10–15% effective Toughness.
+  </div>
+
+  <!-- ============== HOW TO OBTAIN ============== -->
+  <h2>How to Obtain Each Piece</h2>
+  <div class="row">
+    <div class="col">
+      <ul class="howto">
+        <li><b><span class="unique">Herald's Morningstar</span> (1H Mace) —</b> required core unique. Target-farm
+          <b>Tormented bosses</b> in the Paladin loot pool — best odds at <b>Lord Zir</b> or <b>Bartuc</b>.</li>
+        <li><b><span class="unique">Argent Veil</span> (Ring) —</b> Tormented Uber boss drop pool — best odds at
+          <b>Duriel</b> / <b>Andariel</b>. Stack Stygian Stones + summon mats.</li>
+        <li><b><span class="unique">Light's Epiphany</span> (5-piece Charm Set) —</b> Talisman / Charm slot drops from
+          <b>Whispers caches</b> at the Tree of Whispers and from <b>Helltide Mystery Chests</b>. Collect all 5 + a
+          Unique 6th.</li>
+        <li><b>Mythic <span class="unique">Harlequin Crest</span> / <span class="unique">Tyrael's Might</span> —</b>
+          rare drop from any Tormented endgame boss. Best per-hour: pushed-tier <b>The Pit</b> bosses.</li>
+        <li><b><span class="unique">Tyrael's Jurisdiction</span> / <span class="unique">Herald of Zakarum</span>
+            (Shield) —</b> Tormented Paladin boss drops; check the current rotation at the Tree of Whispers.</li>
+        <li><b>Legendary Helm / Chest / Pants / Gloves / Boots / Amulet / Ring 2 —</b> any Ancestral 800 ilvl drop. Best
+          farms: <b>Helltides</b> (Mystery Chests) and <b>The Pit</b>.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <ul class="howto">
+        <li><b>Aspects (Codex) —</b> imprintable aspects come from completing dungeons. Run each dungeon once — Codex
+          aspects always roll max.</li>
+        <li><b>Aspects (Legendary extracts) —</b> if an aspect isn't in the Codex, find a legendary with it and salvage
+          at the <b>Occultist</b> (Extract Aspect).</li>
+        <li><b>Runes (Cir, Gar, Bac, Ohm) —</b> drop from Nightmare Dungeons and from <b>Kurast Undercity</b> runs (set
+          tribute = Runes). Cir + Gar goes on chest, Bac + Ohm on pants.</li>
+        <li><b>Gems (Grand tier) —</b> upgrade lower-tier gems at the <b>Jeweler</b>. Grand Ruby = +Strength / +Holy Dmg
+          on weapon. Grand Diamond = +All Resist (jewelry).</li>
+        <li><b>Tempering Manuals —</b> drop from Helltides (Tortured Gifts of Mysteries), Whisper caches, World Bosses.
+          Have the right manual <i>before</i> tempering.</li>
+        <li><b>Masterworking Materials —</b> The Pit. Higher tiers = more materials. Plan to push T31+ once gear is
+          online.</li>
+        <li><b>Glyph XP —</b> The Pit. Run difficulty close to your max ~3-minute clear for fastest XP.</li>
+        <li><b>Mercenaries —</b> recruit <b>Raheir</b> (tank/support) + <b>Varyana</b> (damage) at the Mercenary Hall.
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    Forged for Falling Swife · Diablo IV Season 13 · A holy comet, hammers in tow.
+  </div>
+
+</body>
+
+</html>

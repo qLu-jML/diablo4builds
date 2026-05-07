@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Nathan's Purple Elder God Build of Death - OPTIMIZED</title>
+  <style>
+    /* ===== DIABLO 4 / WARLOCK · PURPLE ELDER GOD THEME ===== */
+    @page {
+      size: Letter;
+      margin: 0.45in;
+    }
+
+    :root {
+      --ink: #ead7a8;
+      --ink-dim: #b9a679;
+      --gold: #d4a017;
+      --gold-2: #f0c060;
+      --blood: #5c1a8c;
+      --blood-2: #b366ff;
+      --abyss: #2a0a3e;
+      --bg: #07050b;
+      --panel: #110820;
+      --panel-2: #170a28;
+      --rule: #6e4c12;
+      --shadow: 0 0 0 1px #3b1268, 0 0 14px rgba(179, 102, 255, 0.20) inset;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+      font-size: 11.5pt;
+      line-height: 1.45;
+    }
+
+    body {
+      background:
+        radial-gradient(ellipse at top, rgba(92, 26, 140, 0.30), transparent 60%),
+        radial-gradient(ellipse at bottom, rgba(212, 160, 23, 0.08), transparent 70%),
+        var(--bg);
+      padding: 28px 36px 60px;
+      max-width: 8.5in;
+      margin: 0 auto;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: "Trajan Pro", "Cinzel", "Book Antiqua", Georgia, serif;
+      color: var(--gold-2);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 28pt;
+      text-align: center;
+      text-shadow: 0 0 14px rgba(179, 102, 255, 0.7), 0 2px 0 #000;
+      border-top: 2px solid var(--gold);
+      border-bottom: 2px solid var(--gold);
+      padding: 14px 0 12px;
+      margin-bottom: 6px;
+    }
+
+    h2 {
+      font-size: 16pt;
+      color: var(--gold);
+      border-left: 6px solid var(--blood-2);
+      padding: 8px 0 8px 12px;
+      margin: 22px 0 10px;
+      background: linear-gradient(90deg, rgba(92, 26, 140, 0.30), transparent 70%);
+    }
+
+    .subtitle {
+      text-align: center;
+      color: var(--ink-dim);
+      font-style: italic;
+      letter-spacing: 0.08em;
+      margin: 0 0 4px;
+    }
+
+    .stamp {
+      text-align: center;
+      color: var(--blood-2);
+      letter-spacing: 0.25em;
+      font-size: 9pt;
+      margin: 0 0 18px;
+    }
+
+    .ornament {
+      text-align: center;
+      color: var(--gold);
+      margin: 8px 0 18px;
+      letter-spacing: 0.4em;
+    }
+
+    .ornament::before,
+    .ornament::after {
+      content: "";
+      display: inline-block;
+      width: 26%;
+      border-top: 1px solid var(--gold);
+      vertical-align: middle;
+      margin: 0 12px;
+      opacity: 0.7;
+    }
+
+    .panel {
+      background: linear-gradient(180deg, var(--panel-2), var(--panel));
+      border: 1px solid var(--rule);
+      box-shadow: var(--shadow);
+      padding: 12px 16px;
+      margin: 8px 0 16px;
+      position: relative;
+    }
+
+    .panel::before,
+    .panel::after {
+      content: "";
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border: 2px solid var(--gold);
+    }
+
+    .panel::before {
+      top: -1px;
+      left: -1px;
+      border-right: none;
+      border-bottom: none;
+    }
+
+    .panel::after {
+      bottom: -1px;
+      right: -1px;
+      border-left: none;
+      border-top: none;
+    }
+
+    table.gear {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9.8pt;
+      margin: 6px 0 4px;
+    }
+
+    table.gear th,
+    table.gear td {
+      border: 1px solid var(--rule);
+      padding: 7px 8px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    table.gear thead th {
+      background: linear-gradient(180deg, #2a0f4a, #110625);
+      color: var(--gold-2);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 9pt;
+      text-align: center;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    table.gear tbody tr:nth-child(odd) {
+      background: rgba(92, 26, 140, 0.10);
+    }
+
+    table.gear tbody tr:nth-child(even) {
+      background: rgba(212, 160, 23, 0.04);
+    }
+
+    table.gear td.slot {
+      color: var(--gold-2);
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: rgba(0, 0, 0, 0.45);
+      text-align: center;
+      width: 78px;
+    }
+
+    .unique {
+      color: #b366ff;
+      font-weight: bold;
+    }
+
+    .legend {
+      color: #c98c44;
+      font-weight: bold;
+    }
+
+    .greater {
+      color: #f5c84b;
+    }
+
+    .rune {
+      color: #87cefa;
+      font-weight: bold;
+    }
+
+    .gem {
+      color: #ff5252;
+      font-weight: bold;
+    }
+
+    .star::before {
+      content: "★ ";
+      color: var(--gold-2);
+    }
+
+    ol.workflow {
+      counter-reset: step;
+      list-style: none;
+      padding: 0;
+      margin: 8px 0;
+    }
+
+    ol.workflow>li {
+      counter-increment: step;
+      position: relative;
+      padding: 8px 10px 8px 56px;
+      margin: 6px 0;
+      background: rgba(0, 0, 0, 0.35);
+      border-left: 3px solid var(--gold);
+    }
+
+    ol.workflow>li::before {
+      content: counter(step);
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 34px;
+      height: 34px;
+      border: 2px solid var(--gold);
+      background: radial-gradient(circle, var(--blood-2), #2a0a3e);
+      color: #fff;
+      text-align: center;
+      line-height: 30px;
+      font-family: "Cinzel", serif;
+      font-weight: bold;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(179, 102, 255, 0.6);
+    }
+
+    ul.glyphs,
+    ul.howto {
+      list-style: none;
+      padding: 0;
+      margin: 6px 0;
+    }
+
+    ul.glyphs>li,
+    ul.howto>li {
+      position: relative;
+      padding: 6px 8px 6px 28px;
+      border-bottom: 1px dotted var(--rule);
+    }
+
+    ul.glyphs>li::before {
+      content: "✦";
+      position: absolute;
+      left: 8px;
+      top: 6px;
+      color: var(--gold-2);
+    }
+
+    ul.howto>li::before {
+      content: "▸";
+      position: absolute;
+      left: 8px;
+      top: 6px;
+      color: var(--blood-2);
+    }
+
+    .callout {
+      border: 1px solid var(--blood-2);
+      background: rgba(92, 26, 140, 0.20);
+      padding: 10px 14px;
+      margin: 10px 0 18px;
+    }
+
+    .callout .label {
+      font-family: "Cinzel", serif;
+      color: var(--blood-2);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 9.5pt;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .col {
+      flex: 1 1 280px;
+      min-width: 260px;
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--ink-dim);
+      font-size: 9pt;
+      border-top: 1px solid var(--rule);
+      margin-top: 22px;
+      padding-top: 10px;
+    }
+
+    .small {
+      font-size: 9pt;
+      color: var(--ink-dim);
+    }
+
+    table,
+    tr,
+    .panel,
+    ol.workflow>li {
+      break-inside: avoid;
+    }
+
+    h2 {
+      break-after: avoid;
+    }
+
+    @media print {
+      body {
+        background: #07050b !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        padding: 0 12px;
+      }
+
+      h1 {
+        font-size: 24pt;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Nathan's Purple Elder God<br>Build of Death</h1>
+  <p class="subtitle">Infinistep · Blazing Abyss · Permanent Shadowform</p>
+  <p class="stamp">— Optimized Cheat Sheet · Diablo IV Season 13 · Lord of Hatred —</p>
+
+  <div class="ornament"></div>
+
+  <div class="panel">
+    <p style="margin:0">
+      You are an <b>unkillable shadow god</b>. <span class="unique">Footfalls of the Waning World</span> grants infinite <b>Nether Step</b> while maintaining permanent Stealth. 
+      <b>Mastermind Soul Shard</b> + <b>Metamorphosis - Terror Demon</b> lets you spam Abyss skills without ever breaking stealth. 
+      <span class="unique">Night Terror</span> doubles damage in stealth while <span class="unique">Eye of Baal</span> ramps with every Soul Shard cast. 
+      You are invisible, untouchable, and hit exponentially harder the longer fights last.
+    </p>
+  </div>
+
+  <div class="callout">
+    <span class="label">Order of Operations · the right way to gear up</span>
+    Get <b>Footfalls of the Waning World</b> first — without it the build doesn't function. Then chase 
+    <b>Eye of Baal</b> at Bartuc, <b>Night Terror</b> at Andariel, and the <b>Harash's Shadow</b> Talisman set. 
+    Slot Codex aspects on rares as placeholders. Bind <b>Mastermind</b> immediately.
+  </div>
+
+  <!-- ============== MASTER GEAR ============== -->
+  <h2>Master Gear · Best-in-Slot (Optimized)</h2>
+
+  <p class="small" style="margin:0 0 6px">
+    <span class="greater">★</span> = Greater Affix priority &nbsp;·&nbsp;
+    <span class="unique">Purple</span> = Unique &nbsp;·&nbsp;
+    <span class="rune">Rune</span> &nbsp;·&nbsp;
+    <span class="gem">Gem</span> &nbsp;·&nbsp;
+    <b style="color:var(--gold-2)">Bold MW affix</b> = crit pick at masterwork 4 / 8 / 12
+  </p>
+
+  <table class="gear">
+    <thead>
+      <tr>
+        <th style="width:78px">Slot</th>
+        <th style="width:160px">Item / Unique</th>
+        <th>Aspect to Imprint</th>
+        <th>Affixes (priority order)</th>
+        <th style="width:120px">Socket</th>
+        <th>Tempering Manuals</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="slot">Helm</td>
+        <td>Ancestral Legendary<br><span class="small">(or Harlequin Crest)</span></td>
+        <td><b>Aspect of the Devourer</b><br><span class="small">(Command Laalish duration)</span></td>
+        <td>
+          <span class="star greater">Cooldown Reduction</span><br>
+          <span class="star greater"><b>Total Armor</b></span><br>
+          Maximum Life<br>
+          +Ranks of Abyss Skill
+        </td>
+        <td><span class="gem">Royal Ruby</span></td>
+        <td>
+          Worldly: <b>Cooldown Reduction</b><br>
+          Defensive: Armor or Max Life
+        </td>
+      </tr>
+      <tr>
+        <td class="slot">Chest</td>
+        <td>Ancestral Legendary<br><span class="small">(or Shroud of False Death)</span></td>
+        <td><b>Aspect of the Abyssal Shadow</b><br><span class="small">(Shadowform stack gen)</span></td>
+        <td>
+          <span class="star greater"><b>Damage Reduction from Close</b></span><br>
+          <span class="star greater">Maximum Life</span><br>
+          Armor<br>
+          +Ranks of Hex / Abyss Skill
+        </td>
+        <td><span class="rune">Cir</span> + <span class="rune">Gar</span></td>
+        <td>
+          Worldly: <b>Shadowform Stack Gen</b><br>
+          Defensive: DR from Close
+        </td>
+      </tr>
+      <tr>
+        <td class="slot">Pants</td>
+        <td>Ancestral Legendary</td>
+        <td><b>Aspect of the Indomitable</b></td>
+        <td>
+          <span class="star greater">Damage Reduction from Close</span><br>
+          <span class="star greater"><b>Maximum Life</b></span><br>
+          Armor<br>
+          Total Armor
+        </td>
+        <td><span class="gem">Royal Ruby</span> ×2</td>
+        <td>
+          Worldly: Max Life<br>
+          Defensive: <b>DR while Fortified</b>
+        </td>
+      </tr>
+      <tr>
+        <td class="slot">Gloves</td>
+        <td>Ancestral Legendary</td>
+        <td><b>Aspect of Critical Mass</b></td>
+        <td>
+          <span class="star greater"><b>Attack Speed</b></span><br>
+          <span class="star greater">Critical Strike Chance</span><br>
+          Lucky Hit Chance<br>
+          +Ranks of Blazing Scream / Abyss
+        </td>
+        <td>—</td>
+        <td>
+          Worldly: <b>Attack Speed</b><br>
+          Offensive: Crit Strike Chance
+        </td>
+      </tr>
+      <tr>
+        <td class="slot">Boots</td>
+        <td><span class="unique">Footfalls of the Waning World</span><br><span class="small">CORE: Infinite Nether Step + Stealth</span></td>
+        <td>fixed by unique</td>
+        <td>
+          <span class="star greater"><b>Movement Speed</b></span><br>
+          <span class="star greater">Cooldown Reduction</span><br>
+          <span class="star greater">Attacks Reduce Evade Cooldown</span><br>
+          Resistance (any)
+        </td>
+        <td>—</td>
+        <td>
+          Worldly: <b>Evade Cooldown Reduction</b><br>
+          Utility: Movement Speed after Evade
+        </td>
+      </tr>
+      <tr>
+        <td class="slot">Amulet</td>
+        <td><span class="unique">Night Terror</span><br><span class="small">+4–6% Abyss dmg / Shadowform stack (×2 in Stealth)</span></td>
+        <td>fixed by unique</td>
+        <td>
+          <span class="star greater"><b>Cooldown Reduction</b></span><br>
+          <span class="star greater">+Ranks of Abyss Skill</span><br>
+          All Resistance<br>
+          Movement Speed
+        </td>
+        <td>—</td>
+        <td>(Amulets cannot be tempered — re-roll via Enchant only)</td>
+      </tr>
+      <tr>
+        <td class="slot">Ring 1</td>
+        <td><span class="unique">Eye of Baal</span></td>
+        <td>fixed by unique</td>
+        <td>
+          <span class="star greater">Critical Strike Chance</span><br>
+          <span class="star greater"><b>Damage to Hexed Enemies</b></span><br>
+          Lucky Hit Chance<br>
+          Resistance (any)
+        </td>
+        <td><span class="gem">Skull</span></td>
+        <td>
+          Worldly: Crit Strike Chance<br>
+          Offensive: <b>Crit Strike Damage</b>
+        </td>
+      </tr>
+      <tr>
+        <td class="slot">Ring 2</td>
+        <td>Ancestral Legendary</td>
+        <td><b>Aspect of the Hexed Predator</b></td>
+        <td>
+          <span class="star greater">Critical Strike Damage</span><br>
+          <span class="star greater"><b>Cooldown Reduction</b></span><br>
+          Lucky Hit Chance<br>
+          Resistance (any)
+        </td>
+        <td><span class="gem">Skull</span></td>
+        <td>
+          Worldly: Cooldown Reduction<br>
+          Offensive: Crit Strike Damage
+        </td>
+      </tr>
+      <tr>
+        <td class="slot">2-H Weapon</td>
+        <td>Ancestral Legendary 2-H Wand or Staff</td>
+        <td><b>Aspect of the Burning Abyss</b></td>
+        <td>
+          <span class="star greater"><b>Damage to Distant</b></span><br>
+          <span class="star greater">Damage to Close</span><br>
+          Critical Strike Damage<br>
+          Damage over Time
+        </td>
+        <td>
+          <span class="rune">Cem</span> + <span class="rune">Ceh</span>
+        </td>
+        <td>
+          Worldly: <b>Blazing Scream / Abyss Damage</b><br>
+          Offensive: Crit Damage / Vulnerable Damage
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <span class="label">Key Power Synergies (Invincibility + Ramp)</span>
+    • <b>Metamorphosis - Terror Demon</b> (Ultimate) — Constant Shadowform generation without breaking stealth.<br>
+    • <b>Harash's Shadow Talisman Set</b> (5-piece) — Massive Abyss damage + Shadowform bonuses in the Talisman slot.<br>
+    • Temper <b>Attacks Reduce Evade Cooldown</b> on boots + max CDR for truly infinite Nether Step.<br>
+    • Mastermind Soul Shard ensures recasts never drop stealth.
+  </div>
+
+  <!-- ============== PER-ITEM UPGRADE WORKFLOW ============== -->
+  <h2>Per-Item Upgrade Workflow</h2>
+  <p class="small" style="margin:0 0 4px">
+    Repeat for every piece you slot in. Each step is a vendor or crafter — don't skip ahead.
+  </p>
+  <ol class="workflow">
+    <li><b>Acquire</b> Ancestral 800 ilvl item (or Unique). Look for <span class="greater">★ Greater Affixes</span> on a priority stat above.</li>
+    <li><b>Imprint Aspect</b> at the <b>Occultist</b> (Codex or extracted).</li>
+    <li><b>Add Socket</b> at the <b>Jeweler</b> — slot the listed gem or runeword pair.</li>
+    <li><b>Temper twice</b> at the <b>Blacksmith</b> with the listed manuals.</li>
+    <li><b>Enchant</b> at the <b>Occultist</b> — re-roll lowest priority affix.</li>
+    <li><b>Masterwork 12×</b> at the <b>Blacksmith</b>. Crit upgrades on bolded affixes.</li>
+  </ol>
+
+  <!-- ============== OPTIMIZED PARAGON ============== -->
+  <h2>Optimized Paragon Boards & Glyphs</h2>
+
+  <p class="small" style="margin:0 0 4px">
+    Rush every <b>Legendary Node</b> first, then Glyph socket. Level glyphs in <b>The Pit</b> (~3 min clears) to unlock max radius + legendary bonus at level 46.
+  </p>
+
+  <table class="gear" style="margin-top:6px">
+    <thead>
+      <tr>
+        <th style="width:36px">#</th>
+        <th>Board</th>
+        <th style="width:120px">Rotation</th>
+        <th>Glyph</th>
+        <th>Key Legendary Node</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="slot">1</td>
+        <td>Starting Board</td>
+        <td style="text-align:center"><b>—</b></td>
+        <td><b style="color:var(--gold-2)">Destruction</b></td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td class="slot">2</td>
+        <td>Eldritch Sight</td>
+        <td style="text-align:center"><b>3 / 4</b></td>
+        <td><b style="color:var(--gold-2)">Eldritch Sight</b></td>
+        <td><b>Eldritch Sight</b> (Crit / Hex Synergy)</td>
+      </tr>
+      <tr>
+        <td class="slot">3</td>
+        <td>Mastermind</td>
+        <td style="text-align:center"><b>1 / 4</b></td>
+        <td><b style="color:var(--gold-2)">Mastermind</b></td>
+        <td><b>Mastermind</b> (Abyss Ramp + Recast)</td>
+      </tr>
+      <tr>
+        <td class="slot">4</td>
+        <td>Dynamism</td>
+        <td style="text-align:center"><b>3 / 4</b></td>
+        <td><b style="color:var(--gold-2)">Demonologist</b></td>
+        <td><b>Demonologist</b> (Abyss Multiplier)</td>
+      </tr>
+      <tr>
+        <td class="slot">5</td>
+        <td>Greater Hex</td>
+        <td style="text-align:center"><b>2 / 4</b></td>
+        <td><b style="color:var(--gold-2)">Abyssal</b></td>
+        <td><b>Abyssal</b> (Vulnerable + Shadow Damage)</td>
+      </tr>
+      <tr>
+        <td class="slot">6</td>
+        <td>Ichor Carapace</td>
+        <td style="text-align:center"><b>Default</b></td>
+        <td><b style="color:var(--gold-2)">Ichor Carapace</b></td>
+        <td>Defensive Sustain + Shadowform</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <span class="label">Glyph Leveling Order</span>
+    Demonologist → Abyssal → Mastermind → Eldritch Sight → Ichor Carapace
+  </div>
+
+  <div class="callout">
+    <span class="label">Paragon Spend & Board Pathing Order</span>
+    <b>1. Starting Board</b> — Class start → Destruction glyph → attach to Eldritch Sight.<br>
+    <b>2. Eldritch Sight ★</b> — Glyph + Legendary Node (crit/hex core).<br>
+    <b>3. Mastermind Board</b> — Glyph + Legendary (recast power).<br>
+    <b>4. Dynamism / Demonologist</b> — Glyph + Legendary (Abyss multiplier).<br>
+    <b>5. Greater Hex / Abyssal</b> — Glyph + Legendary (Vuln damage).<br>
+    <b>6. Ichor Carapace</b> — Glyph + defensive nodes for permanent stealth sustain.<br><br>
+    <b>Backfill:</b> Shadowform, Abyss, Willpower, and Armor nodes inside glyph radii for maximum tankiness and damage.
+  </div>
+
+  <!-- ============== HOW TO OBTAIN ============== -->
+  <h2>How to Obtain Each Piece</h2>
+  <div class="row">
+    <div class="col">
+      <ul class="howto">
+        <li><b><span class="unique">Footfalls of the Waning World</span></b> — Bartuc, Lord of Chaos or Helltide Mystery Chests.</li>
+        <li><b><span class="unique">Eye of Baal</span></b> — Bartuc (Tormented).</li>
+        <li><b><span class="unique">Night Terror</span></b> — Andariel.</li>
+        <li><b>Harash's Shadow Talisman Set</b> — Whisper caches + Helltides (5-piece for huge Shadowform power).</li>
+        <li><b>Legendaries</b> — Helltides Mystery Chests + The Pit.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <ul class="howto">
+        <li><b>Aspects</b> — Codex dungeons or extract at Occultist.</li>
+        <li><b>Runes</b> — Kurast Undercity (Cir+Gar on Chest, Cem+Ceh on Weapon).</li>
+        <li><b>Glyph XP</b> — The Pit (~3 minute clears).</li>
+        <li><b>Mercenaries</b> — Raheir (tank) + Varyana (damage) with Opportunity on Abyss casts.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    Forged in the Abyss · Permanent Shadowform · Infinite Nether Step · Vanish, Devour, Repeat.
+  </div>
+
+</body>
+
+</html>

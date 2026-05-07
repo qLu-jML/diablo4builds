@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>TheInfamousDannyB's Incinerate and Chill Mode</title>
+  <style>
+    /* ===== DIABLO 4 / SORCERER · FIRE + FROST THEME ===== */
+    @page {
+      size: Letter;
+      margin: 0.45in;
+    }
+
+    :root {
+      --ink: #ead7a8;
+      --ink-dim: #b9a679;
+      --gold: #d4a017;
+      --gold-2: #f0c060;
+      --blood: #c8102e;
+      --blood-2: #ff4500;
+      --flame: #ff8c00;
+      --frost: #87cefa;
+      --bg: #0a0503;
+      --panel: #1a0f08;
+      --panel-2: #2a1a10;
+      --rule: #6e4c12;
+      --shadow: 0 0 0 1px #3b2208, 0 0 14px rgba(255, 140, 0, 0.25) inset;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0; padding: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+      font-size: 11.5pt;
+      line-height: 1.45;
+    }
+
+    body {
+      background: radial-gradient(ellipse at top, rgba(200, 50, 0, 0.35), transparent 60%),
+                  radial-gradient(ellipse at bottom, rgba(135, 206, 250, 0.12), transparent 70%),
+                  var(--bg);
+      padding: 28px 36px 60px;
+      max-width: 8.5in;
+      margin: 0 auto;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: "Trajan Pro", "Cinzel", "Book Antiqua", Georgia, serif;
+      color: var(--gold-2);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 27pt;
+      text-align: center;
+      text-shadow: 0 0 14px rgba(255, 140, 0, 0.8), 0 2px 0 #000;
+      border-top: 2px solid var(--gold);
+      border-bottom: 2px solid var(--gold);
+      padding: 14px 0 12px;
+      margin-bottom: 6px;
+    }
+
+    h2 {
+      font-size: 16pt;
+      color: var(--gold);
+      border-left: 6px solid var(--blood-2);
+      padding: 8px 0 8px 12px;
+      margin: 22px 0 10px;
+      background: linear-gradient(90deg, rgba(200, 50, 0, 0.30), transparent 70%);
+    }
+
+    .subtitle {
+      text-align: center;
+      color: var(--ink-dim);
+      font-style: italic;
+      letter-spacing: 0.08em;
+      margin: 0 0 4px;
+    }
+
+    .stamp {
+      text-align: center;
+      color: var(--blood-2);
+      letter-spacing: 0.25em;
+      font-size: 9pt;
+      margin: 0 0 18px;
+    }
+
+    .ornament {
+      text-align: center;
+      color: var(--gold);
+      margin: 8px 0 18px;
+      letter-spacing: 0.4em;
+    }
+
+    .ornament::before, .ornament::after {
+      content: "";
+      display: inline-block;
+      width: 26%;
+      border-top: 1px solid var(--gold);
+      vertical-align: middle;
+      margin: 0 12px;
+      opacity: 0.7;
+    }
+
+    .panel {
+      background: linear-gradient(180deg, var(--panel-2), var(--panel));
+      border: 1px solid var(--rule);
+      box-shadow: var(--shadow);
+      padding: 12px 16px;
+      margin: 8px 0 16px;
+      position: relative;
+    }
+
+    .panel::before, .panel::after {
+      content: "";
+      position: absolute;
+      width: 14px; height: 14px;
+      border: 2px solid var(--gold);
+    }
+
+    .panel::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+    .panel::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+
+    table.gear {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9.8pt;
+      margin: 6px 0 4px;
+    }
+
+    table.gear th, table.gear td {
+      border: 1px solid var(--rule);
+      padding: 7px 8px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    table.gear thead th {
+      background: linear-gradient(180deg, #3a1f0a, #1a0d04);
+      color: var(--gold-2);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 9pt;
+      text-align: center;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    table.gear tbody tr:nth-child(odd) { background: rgba(200, 50, 0, 0.10); }
+    table.gear tbody tr:nth-child(even) { background: rgba(135, 206, 250, 0.06); }
+
+    table.gear td.slot {
+      color: var(--gold-2);
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: rgba(0, 0, 0, 0.45);
+      text-align: center;
+      width: 78px;
+    }
+
+    .unique { color: #ff8c00; font-weight: bold; }
+    .legend { color: #c98c44; font-weight: bold; }
+    .greater { color: #f5c84b; }
+    .rune { color: #87cefa; font-weight: bold; }
+    .gem { color: #ff5252; font-weight: bold; }
+
+    .star::before { content: "★ "; color: var(--gold-2); }
+
+    ol.workflow {
+      counter-reset: step;
+      list-style: none;
+      padding: 0;
+      margin: 8px 0;
+    }
+
+    ol.workflow > li {
+      counter-increment: step;
+      position: relative;
+      padding: 8px 10px 8px 56px;
+      margin: 6px 0;
+      background: rgba(0, 0, 0, 0.35);
+      border-left: 3px solid var(--gold);
+    }
+
+    ol.workflow > li::before {
+      content: counter(step);
+      position: absolute;
+      left: 10px; top: 50%;
+      transform: translateY(-50%);
+      width: 34px; height: 34px;
+      border: 2px solid var(--gold);
+      background: radial-gradient(circle, var(--blood-2), #2a0a0a);
+      color: #fff;
+      text-align: center;
+      line-height: 30px;
+      font-family: "Cinzel", serif;
+      font-weight: bold;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(255, 140, 0, 0.6);
+    }
+
+    ul.glyphs, ul.howto {
+      list-style: none;
+      padding: 0;
+      margin: 6px 0;
+    }
+
+    ul.glyphs > li, ul.howto > li {
+      position: relative;
+      padding: 6px 8px 6px 28px;
+      border-bottom: 1px dotted var(--rule);
+    }
+
+    ul.glyphs > li::before { content: "✦"; position: absolute; left: 8px; top: 6px; color: var(--gold-2); }
+    ul.howto > li::before { content: "▸"; position: absolute; left: 8px; top: 6px; color: var(--blood-2); }
+
+    .callout {
+      border: 1px solid var(--blood-2);
+      background: rgba(200, 50, 0, 0.20);
+      padding: 10px 14px;
+      margin: 10px 0 18px;
+    }
+
+    .callout .label {
+      font-family: "Cinzel", serif;
+      color: var(--blood-2);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 9.5pt;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .row { display: flex; gap: 14px; flex-wrap: wrap; }
+    .col { flex: 1 1 280px; min-width: 260px; }
+
+    .footer {
+      text-align: center;
+      color: var(--ink-dim);
+      font-size: 9pt;
+      border-top: 1px solid var(--rule);
+      margin-top: 22px;
+      padding-top: 10px;
+    }
+
+    .small { font-size: 9pt; color: var(--ink-dim); }
+
+    table, tr, .panel, ol.workflow > li { break-inside: avoid; }
+    h2 { break-after: avoid; }
+
+    @media print {
+      body { background: #0a0503 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 0 12px; }
+      h1 { font-size: 24pt; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>TheInfamousDannyB's<br>Incinerate and Chill Mode</h1>
+  <p class="subtitle">Flamethrower Turret · Fire + Frost Multi-Element · Stationary Inferno</p>
+  <p class="stamp">— Cheat Sheet · Diablo IV Season 13 · Lord of Hatred —</p>
+
+  <div class="ornament"></div>
+
+  <div class="panel">
+    <p style="margin:0">
+      Become an unmovable <b>Incinerate turret</b>. Channel <b>Incinerate</b> (Flamethrower + Overheating ramp) to shotgun packs and bosses with triple beams. Drop <b>Inferno</b> (Supreme) for grouping, mana-free Pyromancy, and massive buffs. Frost (Ice Armor + Frost Nova) provides unbreakable barriers, CC, and Tal Rasha / Storm Swell multipliers. Stand still, chill, and melt everything.
+    </p>
+  </div>
+
+  <div class="callout">
+    <span class="label">Order of Operations · Gear Up This Way</span>
+    1. Unlock <b>Flamethrower’s Aspect</b> + <b>Aspect of Overheating</b>.<br>
+    2. Farm <b>Tal Rasha’s Iridescent Loop</b> + <b>Ring of Starless Skies</b>.<br>
+    3. Prioritize <b>Harlequin Crest</b>, <b>Shroud of False Death</b>, and defensive Uniques.<br>
+    Use Codex aspects on rares immediately for full functionality.
+  </div>
+
+  <!-- ============== MASTER GEAR ============== -->
+  <h2>Master Gear · Best-in-Slot</h2>
+
+  <p class="small" style="margin:0 0 6px">
+    <span class="greater">★</span> = Greater Affix priority &nbsp;·&nbsp;
+    <span class="unique">Orange</span> = Unique &nbsp;·&nbsp;
+    <span class="rune">Rune</span> &nbsp;·&nbsp;
+    <span class="gem">Gem</span> &nbsp;·&nbsp;
+    <b style="color:var(--gold-2)">Bold MW affix</b> = crit pick at masterwork 4 / 8 / 12
+  </p>
+
+  <table class="gear">
+    <thead>
+      <tr>
+        <th style="width:78px">Slot</th>
+        <th style="width:160px">Item / Unique</th>
+        <th>Aspect to Imprint</th>
+        <th>Affixes (priority order)</th>
+        <th style="width:120px">Socket</th>
+        <th>Tempering Manuals</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="slot">Helm</td>
+        <td>Ancestral Legendary (or <span class="unique">Harlequin Crest</span>)</td>
+        <td><b>Snowveiled Aspect</b><br><span class="small">(Ice Armor Unstoppable + Armor)</span></td>
+        <td>
+          <span class="star greater">Cooldown Reduction</span><br>
+          <span class="star greater"><b>Total Armor</b></span><br>
+          Maximum Life<br>
+          +Ranks of Incinerate
+        </td>
+        <td><span class="gem">Royal Ruby</span></td>
+        <td>
+          Worldly: <b>Cooldown Reduction</b><br>
+          Defensive: Armor or Max Life
+        </td>
+      </tr>
+      <tr>
+        <td class="slot">Chest</td>
+        <td><span class="unique">Shroud of False Death</span> or Raiment of the Infinite</td>
+        <td><b>Aspect of Disobedience</b></td>
+        <td>
+          <span class="star greater"><b>Ranks to Defensive Skills</b></span><br>
+          <span class="star greater">Maximum Life</span><br>
+          Armor / Resistances<br>
+          +Ranks of Pyromancy
+        </td>
+        <td><span class="rune">Lith</span> + <span class="rune">Ohm</span></td>
+        <td>
+          Worldly: <b>Incinerate Size / Barrier</b><br>
+          Defensive: DR from Close
+        </td>
+      </tr>
+      <tr>
+        <td class="slot">Pants</td>
+        <td>Ancestral Legendary (or Tibault’s Will)</td>
+        <td><b>Everliving Aspect</b></td>
+        <td>
+          <span class="star greater">Damage Reduction from Close</span><br>
+          <span class="star greater"><b>Maximum Life</b></span><br>
+          Armor<br>
+          Total Armor
+        </td>
+        <td><span class="gem">Royal Ruby</span> ×2</td>
+        <td>
+          Worldly: Max Life<br>
+          Defensive: <b>DR while Fortified</b>
+        </td>
+      </tr>
+      <tr>
+        <td class="slot">Gloves</td>
+        <td>Ancestral Legendary</td>
+        <td><b>Aspect of Engulfing Flames</b></td>
+        <td>
+          <span class="star greater"><b>Ranks to Incinerate</b></span><br>
+          <span class="star greater">Critical Strike Chance</span><br>
+          Attack Speed<br>
+          +Ranks of Core
+        </td>
+        <td>—</td>
+        <td>
+          Worldly: <b>Attack Speed</b><br>
+          Offensive: Crit Strike / Fire Damage
+        </td>
+      </tr>
+      <tr>
+        <td class="slot">Boots</td>
+        <td>Ancestral Legendary (or Flickerstep)</td>
+        <td><b>Aspect of the Bounding Conduit</b></td>
+        <td>
+          <span class="star greater"><b>Movement Speed</b></span><br>
+          <span class="star greater">Cooldown Reduction</span><br>
+          Max Life
+        </td>
+        <td>—</td>
+        <td>
+          Worldly: <b>Evade Cooldown</b><br>
+          Utility: Movement after Evade
+        </td>
+      </tr>
+      <tr>
+        <td class="slot">Amulet</td>
+        <td><span class="unique">Tal Rasha’s Iridescent Loop</span></td>
+        <td>fixed by unique</td>
+        <td>
+          <span class="star greater"><b>Cooldown Reduction</b></span><br>
+          <span class="star greater">+Ranks to Glass Cannon / Inner Flames</span><br>
+          All Resistance<br>
+          Movement Speed
+        </td>
+        <td>—</td>
+        <td>(Enchant only)</td>
+      </tr>
+      <tr>
+        <td class="slot">Ring 1</td>
+        <td><span class="unique">Ring of Starless Skies</span></td>
+        <td>fixed by unique</td>
+        <td>
+          <span class="star greater">Critical Strike Chance</span><br>
+          <span class="star greater"><b>Cooldown Reduction</b></span><br>
+          Max Life / Intelligence<br>
+          Resource Cost Reduction
+        </td>
+        <td><span class="gem">Skull</span></td>
+        <td>
+          Worldly: Crit Strike Chance<br>
+          Offensive: Burning Damage
+        </td>
+      </tr>
+      <tr>
+        <td class="slot">Ring 2</td>
+        <td>Ancestral Legendary</td>
+        <td><b>Aspect of Conflagration</b></td>
+        <td>
+          <span class="star greater">Critical Strike Damage</span><br>
+          <span class="star greater"><b>Cooldown Reduction</b></span><br>
+          Resource Reduction
+        </td>
+        <td><span class="gem">Skull</span></td>
+        <td>
+          Worldly: Cooldown Reduction<br>
+          Offensive: Crit Strike Damage
+        </td>
+      </tr>
+      <tr>
+        <td class="slot">2-H Weapon</td>
+        <td>Ancestral Legendary Staff</td>
+        <td><b>Aspect of Overheating</b></td>
+        <td>
+          <span class="star greater"><b>Intelligence</b></span><br>
+          <span class="star greater">Fire / DoT Damage</span><br>
+          Critical Strike Damage<br>
+          Resource Cost Reduction
+        </td>
+        <td><span class="rune">Igni</span> + <span class="rune">Zec</span></td>
+        <td>
+          Worldly: <b>Incinerate / Pyromancy Damage</b><br>
+          Offensive: Fiery (double damage)
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <span class="label">Runeword Rule</span>
+    <b>Lith + Ohm</b> on Chest (stand-still turret damage). <b>Igni + Zec</b> on Weapon (Inferno CDR + burn). No gems with runewords.
+  </div>
+
+  <!-- ============== SKILLS ============== -->
+  <h2>Skills · Rotation & Allocation</h2>
+
+  <table class="gear">
+    <thead>
+      <tr>
+        <th style="width:36px">#</th>
+        <th style="width:140px">Skill</th>
+        <th>Modifiers</th>
+        <th>Role</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="slot">1</td><td><b>Incinerate</b></td><td>Flamethrower + Focused Flame + Overpower</td><td>Main DPS channel</td></tr>
+      <tr><td class="slot">2</td><td><b>Inferno</b></td><td>Supreme</td><td>Grouping + buffs on CD</td></tr>
+      <tr><td class="slot">3</td><td><b>Ice Armor</b></td><td>Shimmering</td><td>Barrier + multiplier</td></tr>
+      <tr><td class="slot">4</td><td><b>Flame Shield</b></td><td>Enhanced</td><td>Emergency defense</td></tr>
+      <tr><td class="slot">5</td><td><b>Teleport</b></td><td>Mystical</td><td>Positioning</td></tr>
+      <tr><td class="slot">6</td><td><b>Frost Nova</b></td><td>Shimmering</td><td>CC + Vulnerable</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <span class="label">Rotation</span>
+    Teleport → Inferno → Frost Nova + Ice Armor → Channel Incinerate (hold & ramp). Refresh defenses. Stand firm and chill.
+  </div>
+
+  <!-- ============== OPTIMIZED PARAGON ============== -->
+  <h2>Optimized Paragon Boards & Glyphs</h2>
+
+  <p class="small" style="margin:0 0 4px">Optimized path for maximum Incinerate ramp, Burning, multi-element scaling, and turret survivability. Rush Legendaries first, then glyphs. Level in The Pit (~3 min clears).</p>
+
+  <table class="gear" style="margin-top:6px">
+    <thead>
+      <tr>
+        <th style="width:36px">#</th>
+        <th>Board</th>
+        <th>Rotation</th>
+        <th>Glyph (Priority)</th>
+        <th>Key Legendary Node</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="slot">1</td><td>Starting</td><td>Default</td><td><b>Elementalist</b></td><td>—</td></tr>
+      <tr><td class="slot">2</td><td>Burning Instinct</td><td>Default</td><td><b>Flamefeeder</b> (max first)</td><td>Burning Instinct</td></tr>
+      <tr><td class="slot">3</td><td>Fundamental Release</td><td>1/4</td><td><b>Pyromaniac</b></td><td>Fundamental Release</td></tr>
+      <tr><td class="slot">4</td><td>Enchantment Master</td><td>2/4</td><td><b>Reinforced</b></td><td>Enchantment Master</td></tr>
+      <tr><td class="slot">5</td><td>Frigid Fate</td><td>3/4</td><td><b>Tactician / Control</b></td><td>Icefall / Frigid Fate</td></tr>
+      <tr><td class="slot">6</td><td>Ceaseless Conduit (optional)</td><td>Default</td><td><b>Torch</b></td><td>—</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <span class="label">Paragon Spend & Glyph Leveling Order</span>
+    <b>Early:</b> Flamefeeder → Pyromaniac → Reinforced → Tactician<br>
+    <b>Endgame:</b> Max Flamefeeder (Burning) → Pyromaniac (Incinerate ramp) → Reinforced (barriers) → Control/Tactician (multi-element + crit)<br><br>
+    Rush every Legendary Node first. Prioritize Intelligence, Burning DoT, Barrier, and Fire Damage clusters. Backfill Frost boards for Tal Rasha synergy.
+  </div>
+
+  <!-- ============== HOW TO OBTAIN ============== -->
+  <h2>How to Obtain Each Piece</h2>
+  <div class="row">
+    <div class="col">
+      <ul class="howto">
+        <li><b>Tal Rasha’s + Starless Skies</b> — Tormented Duriel / Andariel / Bartuc.</li>
+        <li><b>Harlequin Crest / Shroud</b> — High Pit + Helltides.</li>
+        <li><b>Legendaries</b> — Helltide Mystery Chests + Pit farming.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <ul class="howto">
+        <li><b>Aspects</b> — Codex dungeons or extract.</li>
+        <li><b>Runes / Masterworking</b> — Kurast Undercity + Pit materials.</li>
+        <li><b>Glyphs</b> — The Pit (push your clear speed).</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    Stand Still · Channel the Flame · Chill in the Inferno.<br>
+    TheInfamousDannyB · Diablo IV Season 13 · Lord of Hatred
+  </div>
+
+</body>
+</html>
