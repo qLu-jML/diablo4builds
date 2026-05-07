@@ -152,6 +152,7 @@
       border-collapse: collapse;
       font-size: 9.8pt;
       margin: 6px 0 4px;
+      table-layout: fixed;
     }
 
     table.gear th,
@@ -188,6 +189,32 @@
       background: rgba(0, 0, 0, 0.45);
       text-align: center;
       width: 78px;
+    }
+
+    /* Wider Affixes column - no wrapping within affixes */
+    table.gear th:nth-child(4),
+    table.gear td:nth-child(4) {
+      width: 28%;
+      min-width: 220px;
+      word-break: normal;
+      white-space: normal;
+    }
+
+    /* Make other columns adjust */
+    table.gear th:nth-child(2) {
+      width: 14%;
+    }
+
+    table.gear th:nth-child(3) {
+      width: 16%;
+    }
+
+    table.gear th:nth-child(5) {
+      width: 10%;
+    }
+
+    table.gear th:nth-child(6) {
+      width: 18%;
     }
 
     .unique {
